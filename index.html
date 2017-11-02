@@ -10,11 +10,21 @@
 
   <body>
     <header>
-      <h1>Secret Decoder Ring</h1>
+      <a href="Maybe just refresh the page.it">
+        <img="logo">
+      </a>
+      <nav id="header_navigation">
+        <ul>
+          <li>
+            <img src="link">
+          </li>
+          <li>
+            <img src="link">
+          </li>
     </header>
 
     <main>
-      <form id="secret_message">
+      <form id="secret_message" class="message_fields">
         <fieldset>
           <label for="name">Alias</label>
           <input type="text" name="name" placeholder="Alias" required>
@@ -25,15 +35,46 @@
         </fieldset>
         <fieldset>
           <label for="message">Message</label>
-          <input type="text" name="input" placeholder="Input Message" required>
+          <input id="large_box" type="text" name="input" placeholder="Input Message" required>
         </fieldset>
 
         <button id="encrypt_btn" type="submit">Encrypt</button>
         <button id="decrypt_btn" type="submit">Decrypt</button>
+        <button id="clear_btn" type="submit">Destroy Message</button>
       </form>
+
+      <selection class="difficulty_selector">
+        <option>ovaltine
+        </option>
+        <option>secret squirrel
+        </option>
+        <option>Boris
+        </option>
+        <option>NSA
+        </option>
+      </selection>
+
+      <p id="read_only_message" class="message_fields"></p>
+      <img src="copybutton">
+
+      <nav id="social_links">
+        <ul>
+          <li>
+            <a target="_blank" title="find us on Facebook" href="http://www.facebook.com/PLACEHOLDER"><img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_30x30.png" border=0></a>
+          </li>
+          <li>
+            <a target="_blank" title="follow me on twitter" href="http://www.twitter.com/PLACEHOLDER"><img alt="follow me on twitter" src="//login.create.net/images/icons/user/twitter-b_30x30.png" border=0></a>
+          </li>
+        </ul>
+      </nav>
+
+      <h2>scrolling text: Karen Perez Jeremy Pearson the rest of us</h2>
+
     </main>
 
     <footer>
+      <p>Code Fellows 2017</p>
+      <p>201 project</p>
     </footer>
 
     <script src="app.js"></script>
