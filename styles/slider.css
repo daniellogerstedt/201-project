@@ -1,17 +1,26 @@
 /* Slider styles */
 
 * {box-sizing:border-box}
-body {font-family: Verdana,sans-serif;margin:0}
+footer {font-family: Verdana,sans-serif;margin:0}
 .mySlides {display:none}
 
 /* Slideshow container */
-img {
-	border-radius: 50%;
+div img {
+	border-radius: 3px;
+
 }
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 960px;
   position: relative;
   margin: auto;
+}
+
+.inactive_footer {
+  max-height: 20px;
+}
+
+.active_footer {
+  max-height: 1000px;
 }
 
 /* Next & previous buttons */
@@ -49,6 +58,15 @@ img {
   bottom: 8px;
   width: 100%;
   text-align: center;
+}
+
+.text strong {
+  font-weight: bold;
+  font-size: 105%;
+}
+
+.text em {
+  font-style: italic;
 }
 
 /* Number text (1/9 etc) */
