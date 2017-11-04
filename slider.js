@@ -32,10 +32,14 @@ function showSlides(n) {
 document.getElementById('hidden_footer_toggle').addEventListener('click', function(e) {
   e.preventDefault();
   var footerContainer = document.getElementById('hidden_footer_container');
+  var footerSizing = document.getElementsByTagName('footer')[0];
+
   if (footerContainer.getAttribute('class') === 'inactive_footer') {
     footerContainer.setAttribute('class', 'active_footer');
+    footerSizing.setAttribute('class', 'large_footer');
   } else {
     footerContainer.setAttribute('class', 'inactive_footer');
+    footerSizing.setAttribute('class', 'small_footer');
   }
 
 });

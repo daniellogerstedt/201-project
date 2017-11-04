@@ -1,13 +1,45 @@
 /* Slider styles */
 
-* {box-sizing:border-box}
-footer {font-family: Verdana,sans-serif;margin:0}
-.mySlides {display:none}
+* {
+  box-sizing:border-box;
+}
+
+.small_footer {
+  font-family: Verdana,sans-serif;
+  text-align: center;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  overflow: hidden;
+  background: #999;
+  color: #fff;
+  transition: linear 350ms all;
+}
+
+.large_footer {
+  font-family: Verdana,sans-serif;
+  text-align: center;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:400px;
+  width:100%;
+  overflow: hidden;
+  background: #999;
+  color: #fff;
+  transition: linear 350ms all;
+}
+
+.mySlides {
+  display:none
+}
 
 /* Slideshow container */
-div img {
-	border-radius: 3px;
-
+footer div div img {
+	border-radius: 1%;
+  max-width: 500px;
 }
 .slideshow-container {
   max-width: 960px;
@@ -16,12 +48,23 @@ div img {
 }
 
 .inactive_footer {
-  max-height: 20px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: linear 350ms all;
 }
 
 .active_footer {
   max-height: 1000px;
+  overflow: hidden;
+  transition: linear 350ms all;
 }
+
+#abbr_btn {
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}
+
 
 /* Next & previous buttons */
 .prev, .next {
@@ -44,34 +87,20 @@ div img {
   border-radius: 3px 0 0 3px;
 }
 
+/* Position the "prev button" to the left */
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;;
+}
+
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #fff;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-.text strong {
-  font-weight: bold;
-  font-size: 105%;
-}
-
-.text em {
-  font-style: italic;
-}
-
 /* Number text (1/9 etc) */
 .numbertext {
-  color: #000;
+  color: #fff;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
