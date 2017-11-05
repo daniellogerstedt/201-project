@@ -1,16 +1,18 @@
-/* Slider styles */
+/* Slider/footer styles */
 
-* {
-  box-sizing:border-box;
+/* Add margin to the body so the footer does not overlap */
+body {
+  margin-bottom: 40px;
 }
 
+/* footer classes for resizing */
 .small_footer {
   font-family: Verdana,sans-serif;
   text-align: center;
   position:fixed;
   left:0px;
   bottom:0px;
-  height:30px;
+  height:40px;
   width:100%;
   overflow: hidden;
   background: #999;
@@ -32,15 +34,24 @@
   transition: linear 350ms all;
 }
 
+/* turn off display initially */
 .mySlides {
   display:none
 }
 
-/* Slideshow container */
+/* footer changes */
 footer div div img {
 	border-radius: 1%;
   max-width: 500px;
 }
+
+footer p:nth-child(2) {
+margin-top: 5px;
+margin-bottom: 5px;
+font-size: 70%;
+}
+
+/* Slideshow container */
 .slideshow-container {
   max-width: 600px;
   position: relative;
@@ -59,6 +70,7 @@ footer div div img {
   transition: linear 350ms all;
 }
 
+/* styles for abbreviation tag */
 #abbr_btn {
   border-bottom: none;
   cursor: inherit;
