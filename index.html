@@ -6,33 +6,78 @@
     <title>Secret Decoder Ring</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/slider.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bangers|Cinzel|Libre+Barcode+39+Text" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
   </head>
 
   <body>
     <header>
       <h1>Secret Decoder Ring</h1>
+      <a id="logo" href="index.html">
+        <img src="img/logo.png" alt="Decoder Ring Logo">
+      </a>
     </header>
 
     <main>
-      <form id="secret_message">
+      <section id="about">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+
+      <form id="message" class="message_fields">
         <fieldset>
-          <label for="name">Alias</label>
+          <label for="name"></label>
           <input type="text" name="name" placeholder="Alias" required>
         </fieldset>
         <fieldset>
-          <label for="keycode">Key</label>
+          <label for="keycode"></label>
           <input type="text" name="key" placeholder="Enter Key" required>
         </fieldset>
-        <fieldset>
-          <label for="message">Message</label>
-          <input type="text" name="input" placeholder="Input Message" required>
-        </fieldset>
-
-        <button id="encrypt_btn" type="submit">Encrypt</button>
-        <button id="decrypt_btn" type="submit">Decrypt</button>
       </form>
+
+      <form id="secret_message" class="message_fields">
+        <fieldset>
+          <label for="message"></label>
+          <input id="large_box" type="text" name="input" placeholder="Input Message" required>
+        </fieldset>
+      </form>
+
+      <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
+        <option value="value1">Ovaltine</option>
+        <option value="value2">Secret Squirrel</option>
+        <option value="value3">NSA Level</option>
+      </select>
+
+      <section id="btns">
+        <button id="encode" type="submit">Encrypt</button>
+        <button id="decode" type="submit">Decrypt</button>
+        <button id="clearbtn" type="submit">Destroy Message</button>
+      </section>
+
+      <div id="decrypt">
+        <p id="read_only_message" class="message_fields">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src="./img/copy.png">
+      </div>
+
+      <nav id="social_links">
+        <ul>
+          <li>
+            <a href="http://www.facebook.com">
+              <img src="../img/fbicon.png">
+            </a>
+          </li>
+          <li>
+            <a href="http://www.twitter.com">
+              <img src="../img/twiticon.png">
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <h2>scrolling text: Karen Perez Jeremy Pearson the rest of us</h2>
+
     </main>
+
 
     <footer class="small_footer">
       <p><abbr id="abbr_btn" title="DON'T CLICK ME!"><a id='hidden_footer_toggle'>&copy; </a></abbr>2017 - Secret Decoder Ring</p>
@@ -103,6 +148,7 @@
       </div>
     </footer>
 
+    <script src="crypto.js"></script>
     <script src="slider.js"></script>
     <script src="app.js"></script>
   </body>
