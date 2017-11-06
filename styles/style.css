@@ -1,4 +1,10 @@
+html {
+  width: 100%;
+}
+
 body {
+  width: 90%;
+  margin: 0px auto;
   background-image: url("../img/spy.jpg");
   background-color: #000;
   background-repeat: no-repeat;
@@ -21,7 +27,6 @@ h1 {
 h1 {
     position: absolute;
     left: -1000px;
-    margin-left: 20px;
     height: 200px;
     -webkit-animation: slide 350ms forwards;
     -webkit-animation-delay: 1s;
@@ -40,6 +45,7 @@ h1 {
 /* Main Logo */
 #logo img {
   margin-top: 80px;
+  margin-left: -5%;
   width: 500px;
 }
 /* End of Main Logo */
@@ -47,19 +53,63 @@ h1 {
 
 /* Main */
 /* About */
+h1 {
+  margin-top: 2%;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 60px;
+  color: #FFF;
+  width: 800px;
+  height: 370px;
+}
+
+h1 {
+    position: absolute;
+    left: -1000px;
+    margin-left: 2%;
+    height: 200px;
+    -webkit-animation: slide 350ms forwards;
+    -webkit-animation-delay: 1s;
+    animation: slide 350ms forwards;
+    animation-delay: 1s;
+}
+
 #about {
-  margin-top: -400px;
-  margin-left: 70%;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 60px;
+  color: #FFF;
   width: 500px;
+}
+
+#about {
+    position: absolute;
+    left: -2000px;
+    margin-left: 5%;
+    height: 200px;
+    -webkit-animation: slide 350ms forwards;
+    -webkit-animation-delay: 1s;
+    animation: slide 350ms forwards;
+    animation-delay: 1.5s;
+}
+
+#about {
+  margin-top: -350px;
+  margin-left: 50%;
+  width: 700px;
+  height: 300px;
 }
 
 #about h2 {
   font-family: Cinzel;
   font-size: 40px;
   color: white;
+  margin-bottom: 2%;
 }
 
-#about p {
+#about p, #about li, #about h3 {
   font-family: arial;
   font-size: 20px;
   color: white;
@@ -67,8 +117,13 @@ h1 {
 /* End of About */
 
 /* Form */
+#form {
+  margin-left: -5%;
+  margin-top: -5%;
+}
+
 #message {
-    margin-top: 180px;
+    margin-top: 50px;
     margin-left: 100px;
 }
 
@@ -84,7 +139,7 @@ h1 {
   margin-left: 100px;
 }
 
-#secret_message fieldset input {
+#large_box fieldset textarea {
   background-color: #444;
   padding: 10px;
   width: 500px;
@@ -101,6 +156,16 @@ h1 {
 #btns button {
   margin-left: 5px;
   padding: 10px;
+}
+
+#encode {
+  background-color: white;
+  font-weight: bold;
+}
+
+#decode {
+  background-color: white;
+  font-weight: bold;
 }
 
 #clearbtn {
@@ -120,8 +185,8 @@ h1 {
 /* End of Difficulty */
 /* Translated Message */
 #decrypt {
-  margin-left: 700px;
-  margin-top: -300px;
+  margin-left: 580px;
+  margin-top: -260px;
 }
 
 #decrypt p {
@@ -129,32 +194,29 @@ h1 {
   font-family: arial;
   font-size: 15px;
   width: 550px;
-  height: 260px;
-}
-
-#decrypt img {
-  margin-left: 520px;
-  width: 40px;
+  height: 200px;
+  margin-bottom: 10px;
+  overflow: auto;
+  border: 3px solid #444;
 }
 /* End of Translated Message */
 /* Navigation */
-#social_links ul li a img {
-  margin-top: 30px;
-  transition: 350ms;
-  float: right;
+#social_links {
+  margin-left: 400px;
+}
+
+#social_links ul li {
   display: inline-block;
+}
+
+#social_links ul li img {
   width: 30px;
-  margin-left: 10px;
+  margin-left: 5px;
+  transition: 350ms;
 }
 
-#social_links ul li a img:hover {
+#social_links ul li img:hover {
   width: 40px;
-}
-
-h2 {
-  margin-top: 50px;
-  text-align:center;
-  color:white;
 }
 
 footer {
