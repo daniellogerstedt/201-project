@@ -33,7 +33,7 @@ body {
   position:fixed;
   left: 0px;
   bottom: 0px;
-  height: 400px;
+  height: 80%;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
@@ -47,14 +47,9 @@ body {
   display:none
 }
 
-/* footer changes */
-footer {
-
-}
-
 footer div div img {
 	border-radius: 2%;
-  max-width: 500px;
+  width: 800px;
 }
 
 footer p:nth-child(2) {
@@ -65,7 +60,7 @@ font-size: 70%;
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 600px;
+  max-width: 800px;
   position: relative;
   margin: auto;
 }
