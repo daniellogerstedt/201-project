@@ -14,17 +14,18 @@ body {
   position:fixed;
   left: 0px;
   bottom:0px;
-  height:40px;
+  height: 40px;
   width: 40%;
   margin-left: 30%;
   margin-right: 30%;
   overflow: hidden;
-  background: #444;
+  background: linear-gradient(#000, #444);
   color: #fff;
   transition: linear 350ms all;
 }
 
 .large_footer {
+  background: linear-gradient(#000, #444);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   font-family: Verdana,sans-serif;
@@ -37,7 +38,6 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   overflow: hidden;
-  background: #444;
   color: #fff;
   transition: linear 350ms all;
 }
