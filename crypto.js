@@ -44,6 +44,7 @@ function confidentialDecrypt(message, password) {
   if (encryptedPassword === password) {
     return decode(decryptionLevelOne.slice(0, -password.length));
   }
+  return spacify(encode(message + 'system lockout'));
 }
 
 // encrypts using previous level encryption function, reverses string then encodes again.
