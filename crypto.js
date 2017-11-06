@@ -5,21 +5,40 @@ function encode(input) {
   return btoa(input);
 }
 
-//decodes input from Base64
+// decodes input from Base64
 function decode(input) {
   return atob(input);
 }
 
-//encrypts input message using password with two levels of encoding
-function confidentialEncrypt(message, password) {
-  var encryptionLevelOne = encode(message);
-  return encode(encryptionLevelOne + password);
+// adds spaces to messages post encryption for aesthetics
+
+function spacify(message) {
+  var messageToSpacify = message;
+  var currentSpacePosition = 0;
+  while (currentSpacePosition < messageToSpacify.length - 8) {
+    currentSpacePosition = currentSpacePosition + Math.floor(Math.random() * (8 - 2) + 2);
+    messageToSpacify = messageToSpacify.slice(0, currentSpacePosition) + ' ' + messageToSpacify.slice(currentSpacePosition, messageToSpacify.length);
+    currentSpacePosition++;
+  }
+  return messageToSpacify;
 }
 
+// removes spaces from message for decryption
 
-//decrypts input message using password from two levels of encoding
+function despacify(message) {
+  var despacifiedMessage = message.split(' ').join('');
+  return despacifiedMessage;
+}
+
+// encrypts input message using password with two levels of encoding
+function confidentialEncrypt(message, password) {
+  var encryptionLevelOne = encode(message);
+  return spacify(encode(encryptionLevelOne + password));
+}
+
+// decrypts input message using password from two levels of encoding
 function confidentialDecrypt(message, password) {
-  var decryptionLevelOne = decode(message);
+  var decryptionLevelOne = decode(despacify(message));
   var encryptedPassword = decryptionLevelOne.slice(-password.length);
   console.log(encryptedPassword);
   if (encryptedPassword === password) {
@@ -27,18 +46,22 @@ function confidentialDecrypt(message, password) {
   }
 }
 
+// encrypts using previous level encryption function, reverses string then encodes again.
+
 function secretEncrypt(message, password) {
-  var confidentialMessage = confidentialEncrypt(message, password);
+  var confidentialMessage = despacify(confidentialEncrypt(message, password));
   var confidentialArray = confidentialMessage.split('');
   var secretArray = [];
   while (confidentialArray.length != 0) {
     secretArray.push(confidentialArray.pop());
   }
-  return encode(secretArray.join(''));
+  return spacify(encode(secretArray.join('')));
 }
 
+// decrypts through decoding, reversing then running previous level decryption.
+
 function secretDecrypt(message, password) {
-  var secretArray = decode(message).split('');
+  var secretArray = decode(despacify(message)).split('');
   var confidentialArray = [];
   while (secretArray.length != 0) {
     confidentialArray.push(secretArray.pop());
@@ -47,8 +70,10 @@ function secretDecrypt(message, password) {
   return decryptedMessage;
 }
 
+// encrypts using previous level then divides chunks of random lengths from the string placing them into a new string before encoding.
+
 function topSecretEncrypt(message, password) {
-  var secretString = secretEncrypt(message, password);
+  var secretString = despacify(secretEncrypt(message, password));
   var encryptionString = '';
   var topSecretString = '';
   var topSecretNumber;
@@ -62,11 +87,13 @@ function topSecretEncrypt(message, password) {
       secretString = '';
     }
   }
-  return encode(topSecretString);
+  return spacify(encode(topSecretString));
 }
 
+// decodes and moves random lengthed chunks back into correct places then decrypts previous levels
+
 function topSecretDecrypt(message, password) {
-  var topSecretString = decode(message);
+  var topSecretString = decode(despacify(message));
   var encryptionString = '';
   var secretString = '';
   var topSecretNumber;
@@ -78,20 +105,3 @@ function topSecretDecrypt(message, password) {
   }
   return secretDecrypt(secretString, password);
 }
-
-// var testMessage = "12345678123456781234567812345678123";
-// var testArray = testMessage.split('');
-// var tempArray = [];
-// var finalArray = [];
-//
-// function encrypt() {
-//   while (testArray.length > 0) {
-//     for (var i = 0; i < 8; i++) {
-//       tempArray.push(testArray.pop())
-//       if (testArray.length === 0) {
-//         break;
-//       }
-//     }
-//     finalArray.push(tempArray.join(''));
-//   }
-// }
