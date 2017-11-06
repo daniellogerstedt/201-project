@@ -18,25 +18,28 @@
       </a>
     </header>
 
+    <div id="welcome" class="inactive">
+      <p>Please enter your name for access</p>
+      <form id="checkname">
+        <fieldset>
+          <label for="user"></label>
+          <input type="text" name="user" placeholder="User Name" required>
+        </fieldset>
+      </form>
+    </div>
+
     <main>
       <section id="about">
         <h2>About</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </section>
 
-      <div id="welcome" class="inactive">
-        <form id="checkname">
-          <fieldset>
-            <label for="user"></label>
-            <input type="text" name="user" placeholder="User Name" required>
-          </fieldset>
-        </form>
-      </div>
+
 
       <form id="message" class="message_fields">
         <fieldset>
           <label for="name"></label>
-          <input type="text" name="name" placeholder="Alias" required>
+          <input id="alias" type="text" name="name" placeholder="Alias" required>
         </fieldset>
         <fieldset>
           <label for="keycode"></label>
