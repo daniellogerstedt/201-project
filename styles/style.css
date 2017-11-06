@@ -21,6 +21,7 @@ h1 {
 h1 {
     position: absolute;
     left: -1000px;
+    margin-left: 20px;
     height: 200px;
     -webkit-animation: slide 350ms forwards;
     -webkit-animation-delay: 1s;
