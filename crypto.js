@@ -33,13 +33,12 @@ function despacify(message) {
 // encrypts input message using password with two levels of encoding
 function confidentialEncrypt(message, password) {
   var encryptionLevelOne = encode(message);
-  return encode(encryptionLevelOne + password);
+  return spacify(encode(encryptionLevelOne + password));
 }
-
 
 // decrypts input message using password from two levels of encoding
 function confidentialDecrypt(message, password) {
-  var decryptionLevelOne = decode(message);
+  var decryptionLevelOne = decode(despacify(message));
   var encryptedPassword = decryptionLevelOne.slice(-password.length);
   console.log(encryptedPassword);
   if (encryptedPassword === password) {
@@ -50,19 +49,19 @@ function confidentialDecrypt(message, password) {
 // encrypts using previous level encryption function, reverses string then encodes again.
 
 function secretEncrypt(message, password) {
-  var confidentialMessage = confidentialEncrypt(message, password);
+  var confidentialMessage = despacify(confidentialEncrypt(message, password));
   var confidentialArray = confidentialMessage.split('');
   var secretArray = [];
   while (confidentialArray.length != 0) {
     secretArray.push(confidentialArray.pop());
   }
-  return encode(secretArray.join(''));
+  return spacify(encode(secretArray.join('')));
 }
 
 // decrypts through decoding, reversing then running previous level decryption.
 
 function secretDecrypt(message, password) {
-  var secretArray = decode(message).split('');
+  var secretArray = decode(despacify(message)).split('');
   var confidentialArray = [];
   while (secretArray.length != 0) {
     confidentialArray.push(secretArray.pop());
@@ -74,7 +73,7 @@ function secretDecrypt(message, password) {
 // encrypts using previous level then divides chunks of random lengths from the string placing them into a new string before encoding.
 
 function topSecretEncrypt(message, password) {
-  var secretString = secretEncrypt(message, password);
+  var secretString = despacify(secretEncrypt(message, password));
   var encryptionString = '';
   var topSecretString = '';
   var topSecretNumber;
@@ -88,13 +87,13 @@ function topSecretEncrypt(message, password) {
       secretString = '';
     }
   }
-  return encode(topSecretString);
+  return spacify(encode(topSecretString));
 }
 
 // decodes and moves random lengthed chunks back into correct places then decrypts previous levels
 
 function topSecretDecrypt(message, password) {
-  var topSecretString = decode(message);
+  var topSecretString = decode(despacify(message));
   var encryptionString = '';
   var secretString = '';
   var topSecretNumber;
