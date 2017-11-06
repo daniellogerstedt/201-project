@@ -15,11 +15,19 @@ function decode(input) {
 function spacify(message) {
   var messageToSpacify = message;
   var currentSpacePosition = 0;
-  while (spacePosition < messageToSpacify.length - 6) {
-    currentSpacePosition = currentSpacePosition + Math.floor(Math.random() * (6 - 2) + 2);
+  while (currentSpacePosition < messageToSpacify.length - 8) {
+    currentSpacePosition = currentSpacePosition + Math.floor(Math.random() * (8 - 2) + 2);
     messageToSpacify = messageToSpacify.slice(0, currentSpacePosition) + ' ' + messageToSpacify.slice(currentSpacePosition, messageToSpacify.length);
     currentSpacePosition++;
   }
+  return messageToSpacify;
+}
+
+// removes spaces from message for decryption
+
+function despacify(message) {
+  var despacifiedMessage = message.split(' ').join('');
+  return despacifiedMessage;
 }
 
 // encrypts input message using password with two levels of encoding
