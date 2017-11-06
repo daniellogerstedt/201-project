@@ -5,6 +5,7 @@
     <meta></meta>
     <title>Secret Decoder Ring</title>
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/slider.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bangers|Cinzel|Libre+Barcode+39+Text" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
   </head>
@@ -77,16 +78,80 @@
 
     </main>
 
-    <footer>
-      <div id="egg">
+
+    <footer class="small_footer">
+      <p><abbr id="abbr_btn" title="DON'T CLICK ME!"><a id='hidden_footer_toggle'>&copy; </a></abbr>2017 - Secret Decoder Ring</p>
+      <p>Special thank you to Kevin Miller</p>
+      <div id="hidden_footer_container" class="inactive_footer">
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 9</div>
+            <img src="./img/jeremy_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 9</div>
+            <img src="./img/archer_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 9</div>
+            <img src="./img/richard_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 9</div>
+            <img src="./img/brian_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 9</div>
+            <img src="./img/jamie_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">6 / 9</div>
+            <img src="./img/classified_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">7 / 9</div>
+            <img src="./img/karen_footer.png">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">8 / 9</div>
+            <img src="./img/lorraine_footer.png">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">9 / 9</div>
+            <img src="https://placehold.it/700x468">
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div style="text-align:center" >
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+          <span class="dot" onclick="currentSlide(6)"></span>
+          <span class="dot" onclick="currentSlide(7)"></span>
+          <span class="dot" onclick="currentSlide(8)"></span>
+          <span class="dot" onclick="currentSlide(9)"></span>
+        </div>
       </div>
-      <section>
-        <p>Code Fellows 2017</p>
-        <p>201 project</p>
-      </section>
     </footer>
 
+    <script src="crypto.js"></script>
+    <script src="slider.js"></script>
     <script src="app.js"></script>
   </body>
+
 
 </html>
