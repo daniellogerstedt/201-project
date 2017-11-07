@@ -29,47 +29,84 @@
     </div>
 
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <section id="instructions">
+        <h2>Instructions:</h2>
+        <p>First determine whether you are using the correct Alias.</p>
+        <ol id="encrypt_instructions">
+          <li>
+            <h3>For Encryption:</h3>
+          </li>
+          <li>Decide on a cypher key, be specific. This is case sensitive.</li>
+          <li>Input your message to be encrypted.</li>
+          <li>Select the level of encryption you wish to use.</li>
+          <li>Click encrypt button.</li>
+        </ol>
+        <ol id="decrypt_instructions">
+          <li>
+            <h3>For Decryption:</h3>
+          </li>
+          <li>Put required cypher key in, be specific. This is case sensitive.</li>
+          <li>Input your message to be decrypted.</li>
+          <li>Select the level of encryption placed on message.</li>
+          <li>Click decrypt button.</li>
+        </ol>
       </section>
 
+      <div id="form">
+        <form>
+          <section id="message">
+            <fieldset>
+              <label for="name"></label>
+              <input type="text" name="name" placeholder="Alias" required>
+            </fieldset>
+            <fieldset>
+              <label for="keycode"></label>
+              <input type="text" name="key" placeholder="Enter Key" required>
+            </fieldset>
+            <fieldset>
+              <label for="message"></label>
+              <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message" required></textarea>
+            </fieldset>
+
+            <label id="security" for="Security Level">Security Level:</label>
+
+          <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
+              <option value="value1">Drink Your Ovaltine</option>
+              <option value="value2">Boris &amp; Natasha</option>
+              <option value="value3">Secret Squirrel</option>
+              <option value="value4">NSA Grade</option>
+          </select>
+
+          <section id="btns">
+            <button id="encode">Encrypt</button>
+            <button id="decode">Decrypt</button>
+            <button id="clearbtn">Destroy Message</button>
+          </section>
+
+          <section id="message-output">
+              <p>Secret Message Populates Here:</p>
+              <nav id="social_links">
+                <ul>
+                  <li>
+                    <a href="http://www.facebook.com">
+                      <img src="./img/fbicon.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.twitter.com">
+                      <img src="./img/twiticon.png">
+                    </a>
+                  </li>
+                  <li>
+                    <img src="./img/copy.png">
+                  </li>
+                </ul>
+              </nav>
+          </section>
 
 
-      <form id="message" class="message_fields">
-        <fieldset>
-          <label for="name"></label>
-          <input id="alias" type="text" name="name" placeholder="Alias" required>
-        </fieldset>
-        <fieldset>
-          <label for="keycode"></label>
-          <input id="key" type="text" name="key" placeholder="Enter Key" required>
-        </fieldset>
-      </form>
-
-      <form id="secret_message" class="message_fields">
-        <fieldset>
-          <label for="message"></label>
-          <input id="large_box" type="text" name="input" placeholder="Input Message" required>
-        </fieldset>
-      </form>
-
-      <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
-          <option value="value1">Drink Your Ovaltine</option>
-          <option value="value2">Boris &amp; Natasha</option>
-          <option value="value3">Secret Squirrel</option>
-          <option value="value4">NSA Grade</option>
-      </select>
-
-      <section id="btns">
-        <button id="encode">Encrypt</button>
-        <button id="decode">Decrypt</button>
-        <button id="clearbtn">Destroy Message</button>
-      </section>
-
-      <div id="decrypt">
-        <p id="read_only_message" class="message_fields">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <img src="./img/copy.png">
+        </form>
       </div>
 
       <nav id="social_links">
@@ -86,9 +123,6 @@
           </li>
         </ul>
       </nav>
-
-      <h2>scrolling text: Karen Perez Jeremy Pearson the rest of us</h2>
-
     </main>
 
 
@@ -99,48 +133,53 @@
         <div class="slideshow-container">
 
           <div class="mySlides fade">
-            <div class="numbertext">1 / 9</div>
+            <div class="numbertext">1 / 10</div>
+            <img src="./img/kevin_footer.jpg">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 10</div>
             <img src="./img/jeremy_footer.jpg">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">2 / 9</div>
+            <div class="numbertext">3 / 10</div>
             <img src="./img/archer_footer.jpg">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">3 / 9</div>
+            <div class="numbertext">4 / 10</div>
             <img src="./img/richard_footer.jpg">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">4 / 9</div>
+            <div class="numbertext">5 / 10</div>
             <img src="./img/brian_footer.jpg">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">5 / 9</div>
+            <div class="numbertext">6 / 10</div>
             <img src="./img/jamie_footer.jpg">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">6 / 9</div>
+            <div class="numbertext">7 / 10</div>
             <img src="./img/classified_footer.jpg">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">7 / 9</div>
+            <div class="numbertext">8 / 10</div>
             <img src="./img/karen_footer.png">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">8 / 9</div>
+            <div class="numbertext">9 / 10</div>
             <img src="./img/lorraine_footer.png">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">9 / 9</div>
-            <img src="https://placehold.it/700x468">
+            <div class="numbertext">10 / 10</div>
+            <img src="./img/dan_footer.jpg">
           </div>
 
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -157,6 +196,7 @@
           <span class="dot" onclick="currentSlide(7)"></span>
           <span class="dot" onclick="currentSlide(8)"></span>
           <span class="dot" onclick="currentSlide(9)"></span>
+          <span class="dot" onclick="currentSlide(10)"></span>
         </div>
       </div>
     </footer>
