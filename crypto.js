@@ -32,12 +32,24 @@ function despacify(message) {
 
 // encrypts input message using password with two levels of encoding
 function confidentialEncrypt(message, password) {
+  if (!message) {
+    return 'The chosen message is invalid.';
+  }
+  if (!password) {
+    return 'The chosen cypher key is invalid';
+  }
   var encryptionLevelOne = encode(message);
   return spacify(encode(encryptionLevelOne + password));
 }
 
 // decrypts input message using password from two levels of encoding
 function confidentialDecrypt(message, password) {
+  if (!message) {
+    return 'The chosen message is invalid.';
+  }
+  if (!password) {
+    return 'The chosen cypher key is invalid';
+  }
   var decryptionLevelOne = decode(despacify(message));
   var encryptedPassword = decryptionLevelOne.slice(-password.length);
   console.log(encryptedPassword);
@@ -50,6 +62,12 @@ function confidentialDecrypt(message, password) {
 // encrypts using previous level encryption function, reverses string then encodes again.
 
 function secretEncrypt(message, password) {
+  if (!message) {
+    return 'The chosen message is invalid.';
+  }
+  if (!password) {
+    return 'The chosen cypher key is invalid';
+  }
   var confidentialMessage = despacify(confidentialEncrypt(message, password));
   var confidentialArray = confidentialMessage.split('');
   var secretArray = [];
@@ -62,6 +80,12 @@ function secretEncrypt(message, password) {
 // decrypts through decoding, reversing then running previous level decryption.
 
 function secretDecrypt(message, password) {
+  if (!message) {
+    return 'The chosen message is invalid.';
+  }
+  if (!password) {
+    return 'The chosen cypher key is invalid';
+  }
   var secretArray = decode(despacify(message)).split('');
   var confidentialArray = [];
   while (secretArray.length != 0) {
@@ -74,6 +98,12 @@ function secretDecrypt(message, password) {
 // encrypts using previous level then divides chunks of random lengths from the string placing them into a new string before encoding.
 
 function topSecretEncrypt(message, password) {
+  if (!message) {
+    return 'The chosen message is invalid.';
+  }
+  if (!password) {
+    return 'The chosen cypher key is invalid';
+  }
   var secretString = despacify(secretEncrypt(message, password));
   var encryptionString = '';
   var topSecretString = '';
@@ -94,6 +124,12 @@ function topSecretEncrypt(message, password) {
 // decodes and moves random lengthed chunks back into correct places then decrypts previous levels
 
 function topSecretDecrypt(message, password) {
+  if (!message) {
+    return 'The chosen message is invalid.';
+  }
+  if (!password) {
+    return 'The chosen cypher key is invalid';
+  }
   var topSecretString = decode(despacify(message));
   var encryptionString = '';
   var secretString = '';

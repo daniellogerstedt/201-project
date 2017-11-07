@@ -2,7 +2,6 @@
 // This app takes in user input and encodes it at various security levels.  A key is added.  The message can only be decoded by someone who holds the key.
 
 //Variable declaration
-var user;  //Check for returning users
 var newUser; //For first time users
 var password=document.getElementById('key');//Password for encrypting and decrypting messages
 var message=document.getElementById('large_box'); //Message to be encrypted
@@ -12,8 +11,7 @@ var message=document.getElementById('large_box'); //Message to be encrypted
 //Check localStorage for a returning user
 function getUser(){
   if (localStorage.user){
-    user = localStorage.user;
-    document.getElementById('alias').value=user;
+    document.getElementById('alias').value = localStorage.user;
   }else{
     //If new visitor, display element for name.
     newUser = document.getElementById('welcome');
@@ -24,19 +22,19 @@ function getUser(){
     main.style.display = 'none';
     newUser.style.display = 'block';
   }
-  return user;
+  return localStorage.user;
 }
 
 //Function to save username
 function save(e){
   event.preventDefault(); //Prevent reload
-  user = e.target.user.value; //Get user name
-  localStorage.user = user;  //Store in localStorage
+  localStorage.user = e.target.user.value; //Get user name
   //Hide user input box
   document.getElementById('welcome').setAttribute('class', 'inactive');
   var main = document.getElementsByTagName('main')[0];
   main.style.display = 'block';
-  newUser.style.display = 'none';    document.getElementById('alias').value=user;
+  newUser.style.display = 'none';
+  document.getElementById('alias').value = localStorage.user;
 }
 
 //Function to check which button was selected
@@ -89,10 +87,10 @@ function button(e){
   }
 
 function checker(){
-  if (password.value==='') {
+  if (!password.value) {
     return false;
   }
-  if (message.value==='') {
+  if (!message.value) {
     return false;
   }
   return true;
