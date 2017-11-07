@@ -1,7 +1,3 @@
-html {
-  width: 100%;
-}
-
 body {
   width: 1300px;
   margin: 0px auto;
@@ -14,6 +10,7 @@ body {
 
 main {
   margin-bottom: 600px;
+  margin-left: 100px;
 }
 
 /* Header */
@@ -46,7 +43,7 @@ h1 {
 @keyframes slide {
   100% { left: 0; }
 }
-/* End of Header */
+
 /* Main Logo */
 #logo img {
   margin-top: 80px;
@@ -57,19 +54,6 @@ h1 {
 /* End of Main Logo */
 /* End Header */
 
-
-/* Main */
-
-main {
-  margin-bottom: 40px;
-}
-
-/* About */
-#about {
-  margin-top: -400px;
-  margin-left: 70%;
-  width: 500px;
-  
 /* instructions */
 #instructions {
   position: absolute;
@@ -84,7 +68,7 @@ main {
 
 #instructions {
   margin-top: -300px;
-  margin-left: 800px;
+  margin-left: 850px;
   width: 700px;
   height: 300px;
 }
@@ -106,12 +90,7 @@ main {
   font-family: Cinzel;
   font-weight: bold;
   font-size: 15px;
-
-#about p, #about li, #about h3 {
-  font-family: arial;
-  font-size: 20px;
-  color: white;
-  margin-bottom: 10px;
+  color: #FFF;
 }
 
 #instructions ol li {
@@ -130,7 +109,6 @@ main {
   margin-bottom: 40px;
 }
 /* End of instructions */
-
 /* Welcome section */
 .inactive {
   display: none;
@@ -139,7 +117,6 @@ main {
 .active {
   display:block;
 }
-
 
 /* Welcome */
 #welcome {
@@ -163,16 +140,12 @@ main {
   width: 300px;
   color: white;
 }
-
-
-
-/* End of welcome */
-
 /* Form */
 /* First Section */
 #form section {
   float: left;
   display: inline-block;
+  height: 315px;
 }
 
 #message fieldset input{
@@ -194,60 +167,57 @@ textarea {
   margin-right: 20px;
 }
 /* End of First Section */
-/* Output Message */
-#message-output {
-  margin-top: 90px;
-  border: 3px solid #444;
-  width: 515px;
-  height: 315px;
-}
 
-#message-output p {
-  color: #e6e6e6;
-  font-family: arial;
-  font-size: 15px;
-}
-/* Output Message */
 /* Difficulty */
 #security {
+  float: left;
   color:white;
   font-family: Cinzel;
   font-size: 20px;
 }
 
 #difficulty {
-  position: absolute;
-  margin-top: -7px;
+  margin-top: -6px;
   margin-left: 10px;
   padding: 10px;
 }
 /* End of Difficulty
 /* Buttons */
-#btns {
-  margin-top: -25px;
-  margin-left: 360px;
-  width: 200px;
-}
-
-#btns button {
-  float: left;
-  margin-left: 5px;
-  margin-right: 2px;
+#encode, #decode {
+  width: 90px;
   padding: 10px;
   background-color: white;
+  font-family: arial;
   font-weight: bold;
+  margin-left: 4px;
 }
 
-#btns>#clearbtn {
-  float: right;
+#clearbtn {
+  position: absolute;
   padding: 10px;
   background-color: black;
   border: 3px solid #444;
   color: white;
-  margin-top: 10px;
-  margin-right: 40px;
+  margin-top: 50px;
+  margin-left: -130px;
 }
 /* End of Buttons */
+
+/* Output Message */
+#message-output {
+  margin-top: 90px;
+  border: 3px solid #444;
+  width: 515px;
+  height: 200px;
+}
+
+#message-output p {
+  color: #a6a6a6;
+  font-family: arial;
+  font-size: 15px;
+}
+/* Output Message */
+
 /* Navigation */
 #social_links {
 clear: both;
