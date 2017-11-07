@@ -156,13 +156,13 @@ h1 {
   color: white;
 }
 
-textarea {
+#message textarea {
   background-color: #444;
   padding: 10px;
   width: 500px;
   height: 300px;
-  line-height: 15px
-  color: white;
+  line-height: 15px;
+  color: #FFF;
   margin-bottom: 15px;
   margin-right: 20px;
 }
@@ -183,6 +183,17 @@ textarea {
 }
 /* End of Difficulty
 /* Buttons */
+#clearLocal {
+  position: absolute;
+  padding: 10px;
+  background-color: black;
+  border: 3px solid #444;
+  color: white;
+  font-family: arial;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
 #encode, #decode {
   width: 90px;
   padding: 10px;
