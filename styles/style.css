@@ -46,6 +46,11 @@ h1 {
 /* End Header */
 
 /* Main */
+
+main {
+  margin-bottom: 40px;
+}
+
 /* About */
 #about {
   margin-top: -400px;

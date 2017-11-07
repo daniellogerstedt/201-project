@@ -43,7 +43,7 @@
         </fieldset>
         <fieldset>
           <label for="keycode"></label>
-          <input type="text" name="key" placeholder="Enter Key" required>
+          <input id="key" type="text" name="key" placeholder="Enter Key" required>
         </fieldset>
       </form>
 
@@ -55,15 +55,16 @@
       </form>
 
       <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
-        <option value="value1">Ovaltine</option>
-        <option value="value2">Secret Squirrel</option>
-        <option value="value3">NSA Level</option>
+          <option value="value1">Drink Your Ovaltine</option>
+          <option value="value2">Boris &amp; Natasha</option>
+          <option value="value3">Secret Squirrel</option>
+          <option value="value4">NSA Grade</option>
       </select>
 
       <section id="btns">
-        <button id="encode" type="submit">Encrypt</button>
-        <button id="decode" type="submit">Decrypt</button>
-        <button id="clearbtn" type="submit">Destroy Message</button>
+        <button id="encode">Encrypt</button>
+        <button id="decode">Decrypt</button>
+        <button id="clearbtn">Destroy Message</button>
       </section>
 
       <div id="decrypt">
