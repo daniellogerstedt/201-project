@@ -19,11 +19,11 @@
     </header>
 
     <div id="welcome" class="inactive">
-      <p>Please enter your name for access</p>
+      <p>Please enter your name for access:</p>
       <form id="checkname">
         <fieldset>
           <label for="user"></label>
-          <input type="text" name="user" placeholder="User Name" required>
+          <input id="username" type="text" name="user" placeholder="User Name" required>
         </fieldset>
       </form>
     </div>
@@ -57,15 +57,16 @@
           <section id="message">
             <fieldset>
               <label for="name"></label>
-              <input type="text" name="name" placeholder="Alias" required>
+              <input id="alias" type="text" name="name" placeholder="Alias">
+              <button id="clearLocal">Reset User</button>
             </fieldset>
             <fieldset>
               <label for="keycode"></label>
-              <input type="text" name="key" placeholder="Enter Key" required>
+              <input id="key" type="text" name="key" placeholder="Enter Key">
             </fieldset>
             <fieldset>
               <label for="message"></label>
-              <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message" required></textarea>
+              <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message"></textarea>
             </fieldset>
 
             <label id="security" for="Security Level">Security Level:</label>
@@ -83,21 +84,21 @@
           </section>
 
           <section id="message-output">
-            <p>Secret Message Populates Here:</p>
+            <textarea readonly id="read_only_message" type="text" rows="20" placeholder="Secret Message Populates Here:"> </textarea>
             <nav id="social_links">
               <ul>
                 <li>
-                  <a href="http://www.facebook.com">
+                  <a href="http://www.facebook.com" target="_blank">
                     <img src="./img/fbicon.png">
                   </a>
                 </li>
                 <li>
-                  <a href="http://www.twitter.com">
+                  <a href="http://www.twitter.com" target="_blank">
                     <img src="./img/twiticon.png">
                   </a>
                 </li>
                 <li>
-                  <img src="./img/copy.png">
+                  <img id="copylink" src="./img/copy.png">
                 </li>
               </ul>
             </nav>

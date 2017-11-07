@@ -63,12 +63,12 @@ h1 {
   -webkit-animation: slide 350ms forwards;
   -webkit-animation-delay: 1s;
   animation: slide 350ms forwards;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 
 #instructions {
   margin-top: -300px;
-  margin-left: 850px;
+  margin-left: 800px;
   width: 700px;
   height: 300px;
 }
@@ -156,13 +156,13 @@ h1 {
   color: white;
 }
 
-textarea {
+#large_box {
   background-color: #444;
   padding: 10px;
   width: 500px;
   height: 300px;
-  line-height: 15px
-  color: white;
+  line-height: 15px;
+  color: #FFF;
   margin-bottom: 15px;
   margin-right: 20px;
 }
@@ -183,6 +183,17 @@ textarea {
 }
 /* End of Difficulty
 /* Buttons */
+#clearLocal {
+  position: absolute;
+  padding: 10px;
+  background-color: black;
+  border: 3px solid #444;
+  color: white;
+  font-family: arial;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
 #encode, #decode {
   width: 90px;
   padding: 10px;
@@ -205,16 +216,21 @@ textarea {
 
 /* Output Message */
 #message-output {
-  margin-top: 90px;
+  margin-top: 85px;
   border: 3px solid #444;
   width: 515px;
   height: 200px;
 }
 
-#message-output p {
-  color: #a6a6a6;
-  font-family: arial;
-  font-size: 15px;
+#read_only_message {
+  background-color: #444;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  line-height: 15px;
+  color: #FFF;
+  margin-bottom: 15px;
+  margin-right: 20px;
 }
 /* Output Message */
 
@@ -222,7 +238,6 @@ textarea {
 #social_links {
 clear: both;
 float: right;
-margin-top: 320px;
 }
 
 #social_links ul li {
