@@ -5,6 +5,9 @@ body {
   margin-bottom: 40px;
 }
 
+footer {
+  margin-top: 100px;
+}
 /* footer classes for resizing */
 .small_footer {
   border-top-left-radius: 50%;

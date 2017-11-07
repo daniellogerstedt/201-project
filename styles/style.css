@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  width: 90%;
+  width: 1300px;
   margin: 0px auto;
   background-image: url("../img/spy.jpg");
   background-color: #000;
@@ -12,119 +12,167 @@ body {
   background-position: center;
 }
 
+main {
+  margin-bottom: 600px;
+}
+
 /* Header */
 h1 {
   margin-top: 20px;
   position: relative;
   overflow: hidden;
   font-family: 'Libre Barcode 39 Text';
-  font-size: 60px;
+  font-size: 70px;
   color: #FFF;
   width: 800px;
   height: 370px;
 }
 
 h1 {
-    position: absolute;
-    left: -1000px;
-    height: 200px;
-    -webkit-animation: slide 350ms forwards;
-    -webkit-animation-delay: 1s;
-    animation: slide 350ms forwards;
-    animation-delay: 1s;
+  position: absolute;
+  margin-left: 20px;
+  left: -1000px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 1s;
 }
 
 @-webkit-keyframes slide {
-    100% { left: 0; }
+  100% { left: 0; }
 }
 
 @keyframes slide {
-    100% { left: 0; }
+  100% { left: 0; }
 }
-
+/* End of Header */
 /* Main Logo */
 #logo img {
   margin-top: 80px;
-  margin-left: -5%;
-  width: 500px;
+  margin-left: -20px;
+  width: 400px;
+  margin-bottom: 20px;
 }
 /* End of Main Logo */
 /* End Header */
 
+
 /* Main */
+
+main {
+  margin-bottom: 40px;
+}
+
 /* About */
-h1 {
-  margin-top: 2%;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Libre Barcode 39 Text';
-  font-size: 60px;
-  color: #FFF;
-  width: 800px;
-  height: 370px;
-}
-
-h1 {
-    position: absolute;
-    left: -1000px;
-    margin-left: 2%;
-    height: 200px;
-    -webkit-animation: slide 350ms forwards;
-    -webkit-animation-delay: 1s;
-    animation: slide 350ms forwards;
-    animation-delay: 1s;
-}
-
 #about {
-  position: relative;
-  overflow: hidden;
-  font-family: 'Libre Barcode 39 Text';
-  font-size: 60px;
-  color: #FFF;
+  margin-top: -400px;
+  margin-left: 70%;
   width: 500px;
+  
+/* instructions */
+#instructions {
+  position: absolute;
+  left: -2000px;
+  margin-left: 20px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 1.5s;
 }
 
-#about {
-    position: absolute;
-    left: -2000px;
-    margin-left: 5%;
-    height: 200px;
-    -webkit-animation: slide 350ms forwards;
-    -webkit-animation-delay: 1s;
-    animation: slide 350ms forwards;
-    animation-delay: 1.5s;
-}
-
-#about {
-  margin-top: -350px;
-  margin-left: 50%;
+#instructions {
+  margin-top: -300px;
+  margin-left: 800px;
   width: 700px;
   height: 300px;
 }
 
-#about h2 {
-  font-family: Cinzel;
-  font-size: 40px;
-  color: white;
-  margin-bottom: 2%;
+#instructions ol {
+  display: inline-block;
+  float: left;
 }
+
+#instructions h2 {
+  font-family: Cinzel;
+  font-weight: bold;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#instructions h3 {
+  font-family: Cinzel;
+  font-weight: bold;
+  font-size: 15px;
 
 #about p, #about li, #about h3 {
   font-family: arial;
   font-size: 20px;
   color: white;
+  margin-bottom: 10px;
 }
-/* End of About */
+
+#instructions ol li {
+  font-family: Arial;
+  font-size: 15px;
+  color: #a6a6a6;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#instructions p {
+  font-family: arial;
+  font-size: 15px;
+  color: #a6a6a6;
+  width: 300px;
+  margin-bottom: 40px;
+}
+/* End of instructions */
+
+/* Welcome section */
+.inactive {
+  display: none;
+}
+
+.active {
+  display:block;
+}
+
+
+/* Welcome */
+#welcome {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+#welcome p{
+  background-color: black;
+  color: white;
+}
+
+#checkname fieldset{
+  background-color: black;
+}
+
+#checkname input{
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 300px;
+  color: white;
+}
+
+
+
+/* End of welcome */
 
 /* Form */
-#form {
-  margin-left: -5%;
-  margin-top: -5%;
-}
-
-#message {
-    margin-top: 50px;
-    margin-left: 100px;
+/* First Section */
+#form section {
+  float: left;
+  display: inline-block;
 }
 
 #message fieldset input{
@@ -135,74 +183,76 @@ h1 {
   color: white;
 }
 
-#secret_message {
-  margin-left: 100px;
-}
-
-#large_box fieldset textarea {
+textarea {
   background-color: #444;
   padding: 10px;
   width: 500px;
   height: 300px;
   line-height: 15px
   color: white;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+/* End of First Section */
+/* Output Message */
+#message-output {
+  margin-top: 90px;
+  border: 3px solid #444;
+  width: 515px;
+  height: 315px;
 }
 
+#message-output p {
+  color: #e6e6e6;
+  font-family: arial;
+  font-size: 15px;
+}
+/* Output Message */
+/* Difficulty */
+#security {
+  color:white;
+  font-family: Cinzel;
+  font-size: 20px;
+}
+
+#difficulty {
+  position: absolute;
+  margin-top: -7px;
+  margin-left: 10px;
+  padding: 10px;
+}
+/* End of Difficulty
+/* Buttons */
 #btns {
-  margin-top: 5px;
-  margin-left: 330px;
+  margin-top: -25px;
+  margin-left: 360px;
+  width: 200px;
 }
 
 #btns button {
+  float: left;
   margin-left: 5px;
+  margin-right: 2px;
   padding: 10px;
-}
-
-#encode {
   background-color: white;
   font-weight: bold;
 }
 
-#decode {
-  background-color: white;
-  font-weight: bold;
-}
-
-#clearbtn {
+#btns>#clearbtn {
+  float: right;
   padding: 10px;
   background-color: black;
-  border-color: #444;
-  border-style: solid;
-  color: white;
-}
-/* End Form */
-/* Difficulty Selector */
-#difficulty {
-  position: absolute;
-  margin-top: 10px;
-  margin-left: 150px;
-}
-/* End of Difficulty */
-/* Translated Message */
-#decrypt {
-  margin-left: 580px;
-  margin-top: -260px;
-}
-
-#decrypt p {
-  color: #a6a6a6;
-  font-family: arial;
-  font-size: 15px;
-  width: 550px;
-  height: 200px;
-  margin-bottom: 10px;
-  overflow: auto;
   border: 3px solid #444;
+  color: white;
+  margin-top: 10px;
+  margin-right: 40px;
 }
-/* End of Translated Message */
+/* End of Buttons */
 /* Navigation */
 #social_links {
-  margin-left: 400px;
+clear: both;
+float: right;
+margin-top: 320px;
 }
 
 #social_links ul li {
@@ -218,17 +268,4 @@ h1 {
 #social_links ul li img:hover {
   width: 40px;
 }
-
-footer {
-  height: 100px;
-}
-
-footer section {
-    margin-top: 100px;
-}
-
-footer p {
-  text-align:center;
-  color: white;
-  margin-bottom: 10px;
-}
+/* End of Navigation */

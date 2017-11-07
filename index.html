@@ -18,19 +18,35 @@
       </a>
     </header>
 
+    <div id="welcome" class="inactive">
+      <p>Please enter your name for access</p>
+      <form id="checkname">
+        <fieldset>
+          <label for="user"></label>
+          <input type="text" name="user" placeholder="User Name" required>
+        </fieldset>
+      </form>
+    </div>
+
     <main>
-      <section id="about">
+
+      <section id="instructions">
         <h2>Instructions:</h2>
         <p>First determine whether you are using the correct Alias.</p>
-        <h3>For Encryption:</h3>
         <ol id="encrypt_instructions">
-          <li>Decide on a cypher key, be specific this is case sensitive.</li>
+          <li>
+            <h3>For Encryption:</h3>
+          </li>
+          <li>Decide on a cypher key, be specific. This is case sensitive.</li>
           <li>Input your message to be encrypted.</li>
           <li>Select the level of encryption you wish to use.</li>
           <li>Click encrypt button.</li>
         </ol>
         <ol id="decrypt_instructions">
-          <li>Put required cypher key in, be specific this is case sensitive.</li>
+          <li>
+            <h3>For Decryption:</h3>
+          </li>
+          <li>Put required cypher key in, be specific. This is case sensitive.</li>
           <li>Input your message to be decrypted.</li>
           <li>Select the level of encryption placed on message.</li>
           <li>Click decrypt button.</li>
@@ -38,58 +54,59 @@
       </section>
 
       <div id="form">
-        <form id="message" class="message_fields">
+        <form>
+          <section id="message">
+            <fieldset>
+              <label for="name"></label>
+              <input type="text" name="name" placeholder="Alias" required>
+            </fieldset>
+            <fieldset>
+              <label for="keycode"></label>
+              <input type="text" name="key" placeholder="Enter Key" required>
+            </fieldset>
+            <fieldset>
+              <label for="message"></label>
+              <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message" required></textarea>
+            </fieldset>
 
-          <fieldset>
-            <label for="name"></label>
-            <input type="text" name="name" placeholder="Alias" required>
-          </fieldset>
-          <fieldset>
-            <label for="keycode"></label>
-            <input type="text" name="key" placeholder="Enter Key" required>
-          </fieldset>
-          <fieldset>
-            <label for="message"></label>
-            <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message" required></textarea>
-          </fieldset>
+            <label id="security" for="Security Level">Security Level:</label>
 
-          <label for="Security Level">Security Level:</label>
-          <select id="difficulty" name="difficulty">
-            <option value="value1">Drink Your Ovaltine</option>
-            <option value="value2">Boris &amp; Natasha</option>
-            <option value="value3">Secret Squirrel</option>
-            <option value="value3">NSA Grade</option>
+          <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
+              <option value="value1">Drink Your Ovaltine</option>
+              <option value="value2">Boris &amp; Natasha</option>
+              <option value="value3">Secret Squirrel</option>
+              <option value="value4">NSA Grade</option>
           </select>
 
           <section id="btns">
-            <button id="encrypt">Encrypt</button>
-            <button id="decrypt">Decrypt</button>
-            <button id="clearbtn" type="submit">Destroy Message</button>
+            <button id="encode">Encrypt</button>
+            <button id="decode">Decrypt</button>
+            <button id="clearbtn">Destroy Message</button>
           </section>
 
+          <section id="message-output">
+              <p>Secret Message Populates Here:</p>
+              <nav id="social_links">
+                <ul>
+                  <li>
+                    <a href="http://www.facebook.com">
+                      <img src="./img/fbicon.png">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.twitter.com">
+                      <img src="./img/twiticon.png">
+                    </a>
+                  </li>
+                  <li>
+                    <img src="./img/copy.png">
+                  </li>
+                </ul>
+              </nav>
+          </section>
+
+
         </form>
-      </div>
-
-      <div id="decrypt">
-        <p id="read_only_message" class="message_fields">Secret Message Populates Here:</p>
-
-        <nav id="social_links">
-          <ul>
-            <li>
-              <a href="http://www.facebook.com">
-                <img src="./img/fbicon.png">
-              </a>
-            </li>
-            <li>
-              <a href="http://www.twitter.com">
-                <img src="./img/twiticon.png">
-              </a>
-            </li>
-            <li>
-              <img src="./img/copy.png">
-            </li>
-          </ul>
-        </nav>
       </div>
 
       <nav id="social_links">
