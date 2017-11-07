@@ -63,12 +63,12 @@ h1 {
   -webkit-animation: slide 350ms forwards;
   -webkit-animation-delay: 1s;
   animation: slide 350ms forwards;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 
 #instructions {
   margin-top: -300px;
-  margin-left: 850px;
+  margin-left: 800px;
   width: 700px;
   height: 300px;
 }
