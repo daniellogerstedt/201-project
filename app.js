@@ -3,8 +3,8 @@
 
 //Variable declaration
 var newUser; //For first time users
-var password=document.getElementById('key');//Password for encrypting and decrypting messages
-var message=document.getElementById('large_box'); //Message to be encrypted
+var password = document.getElementById('key');//Password for encrypting and decrypting messages
+var message = document.getElementById('large_box'); //Message to be encrypted
 
 //Helper functions
 
@@ -42,8 +42,9 @@ function button(e){
   e.preventDefault();
 
   if (e.target.innerHTML === 'Destroy Message'){
-    message.value='';
-    password.value='';
+    message.value = '';
+    password.value = '';
+    document.getElementById('read_only_message').value = '';
 
   } else if (e.target.innerHTML === 'Encrypt'){
     if (!checker()){
@@ -51,16 +52,16 @@ function button(e){
       return;
     }
     var level = document.getElementById('difficulty').value;
-    if (level==='value1'){
+    if (level === 'value1'){
       var output = confidentialEncrypt(message.value, password.value);
-      document.getElementById('read_only_message').innerHTML=output;
-    }else if (level==='value2'){
+      document.getElementById('read_only_message').innerHTML = output;
+    }else if (level === 'value2'){
       var output = secretEncrypt(message.value, password.value);
-      document.getElementById('read_only_message').innerHTML=output;
-    }else if (level==='value3'){
+      document.getElementById('read_only_message').innerHTML = output;
+    }else if (level === 'value3'){
       var output = topSecretEncrypt(message.value, password.value);
-      document.getElementById('read_only_message').innerHTML=output;
-    }else if (level==='value4'){
+      document.getElementById('read_only_message').innerHTML = output;
+    }else if (level === 'value4'){
       alert('NSA Encryption Detected.');
     }
 
@@ -71,22 +72,22 @@ function button(e){
     }
     try {
       var level = document.getElementById('difficulty').value;
-      if (level==='value1'){
+      if (level === 'value1'){
         var output = confidentialDecrypt(message.value, password.value);
-        document.getElementById('read_only_message').innerHTML=output;
-      }else if (level==='value2'){
+        document.getElementById('read_only_message').innerHTML = output;
+      }else if (level === 'value2'){
         var output = secretDecrypt(message.value, password.value);
-        document.getElementById('read_only_message').innerHTML=output;
-      }else if (level==='value3'){
+        document.getElementById('read_only_message').innerHTML = output;
+      }else if (level === 'value3'){
         var output = topSecretDecrypt(message.value, password.value);
-        document.getElementById('read_only_message').innerHTML=output;
-      }else if (level==='value4'){
+        document.getElementById('read_only_message').innerHTML = output;
+      }else if (level === 'value4'){
         alert('NSA Encryption Detected.');
       }
     }
     catch (e) {
       var output = 'The input message is not encrypted, the cypher key used is invalid, and/or an incorrect encryption level was selected.'
-      document.getElementById('read_only_message').innerHTML=output;
+      document.getElementById('read_only_message').innerHTML = output;
     }
   }
 }
@@ -115,3 +116,13 @@ document.getElementById('encode').addEventListener('click', button);
 document.getElementById('decode').addEventListener('click', button);
 document.getElementById('clearbtn').addEventListener('click', button);
 document.getElementById('clearLocal').addEventListener('click', resetUser);
+
+//Copy button
+var copybtn = document.getElementById('copylink');
+copybtn.addEventListener('click', copy);
+var secret = document.getElementById('read_only_message');
+
+function copy() {
+  secret.select();
+  document.execCommand('copy');
+}
