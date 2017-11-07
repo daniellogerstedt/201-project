@@ -42,9 +42,7 @@ function button(e){
   e.preventDefault();
 
   if (e.target.innerHTML === 'Destroy Message'){
-    message.value = '';
-    password.value = '';
-    document.getElementById('read_only_message').value = '';
+    window.location.reload(true);
 
   } else if (e.target.innerHTML === 'Encrypt'){
     if (!checker()){
