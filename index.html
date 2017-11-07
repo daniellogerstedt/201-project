@@ -18,7 +18,18 @@
       </a>
     </header>
 
+    <div id="welcome" class="inactive">
+      <p>Please enter your name for access</p>
+      <form id="checkname">
+        <fieldset>
+          <label for="user"></label>
+          <input type="text" name="user" placeholder="User Name" required>
+        </fieldset>
+      </form>
+    </div>
+
     <main>
+
       <section id="instructions">
         <h2>Instructions:</h2>
         <p>First determine whether you are using the correct Alias.</p>
@@ -60,18 +71,17 @@
 
             <label id="security" for="Security Level">Security Level:</label>
 
-            <select id="difficulty" name="difficulty">
+          <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
               <option value="value1">Drink Your Ovaltine</option>
               <option value="value2">Boris &amp; Natasha</option>
               <option value="value3">Secret Squirrel</option>
-              <option value="value3">NSA Grade</option>
-            </select>
+              <option value="value4">NSA Grade</option>
+          </select>
 
-            <div id="btns">
-              <button id="encrypt">Encrypt</button>
-              <button id="decrypt">Decrypt</button>
-              <button id="clearbtn">Destroy Message</button>
-            </div>
+          <section id="btns">
+            <button id="encode">Encrypt</button>
+            <button id="decode">Decrypt</button>
+            <button id="clearbtn">Destroy Message</button>
           </section>
 
           <section id="message-output">

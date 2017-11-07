@@ -57,6 +57,19 @@ h1 {
 /* End of Main Logo */
 /* End Header */
 
+
+/* Main */
+
+main {
+  margin-bottom: 40px;
+}
+
+/* About */
+#about {
+  margin-top: -400px;
+  margin-left: 70%;
+  width: 500px;
+  
 /* instructions */
 #instructions {
   position: absolute;
@@ -117,6 +130,43 @@ h1 {
   margin-bottom: 40px;
 }
 /* End of instructions */
+
+/* Welcome section */
+.inactive {
+  display: none;
+}
+
+.active {
+  display:block;
+}
+
+
+/* Welcome */
+#welcome {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+#welcome p{
+  background-color: black;
+  color: white;
+}
+
+#checkname fieldset{
+  background-color: black;
+}
+
+#checkname input{
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 300px;
+  color: white;
+}
+
+
+
+/* End of welcome */
 
 /* Form */
 /* First Section */
