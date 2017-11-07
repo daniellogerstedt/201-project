@@ -83,13 +83,13 @@ function button(e){
     }
     var level = document.getElementById('difficulty').value;
     if (level === 'value1'){
-      var output = confidentialEncrypt(message.value, password.value);
+      var output = confidentialEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
     }else if (level === 'value2'){
-      var output = secretEncrypt(message.value, password.value);
+      var output = secretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
     }else if (level === 'value3'){
-      var output = topSecretEncrypt(message.value, password.value);
+      var output = topSecretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
     }else if (level === 'value4'){
       alert('NSA Encryption Detected.');
