@@ -25,6 +25,38 @@ function getUser(){
   return localStorage.user;
 }
 
+function reuseKey(event) {
+  password.value = event.target.value;
+}
+
+function keyListSave(password) {
+  if (!password) {
+    return;
+  }
+  var keyArray = [];
+  if (localStorage[localStorage.user + 'keys']) {
+    keyArray = localStorage[localStorage.user + 'keys'].split(',');
+  }
+  for (var i = 0; i < keyArray.length; i++) {
+    if (keyArray[i] === password) {
+      return;
+    }
+  }
+  if (keyArray.length === 5) {
+    keyArray = keyArray.slice(-4);
+  }
+  keyArray.push(password);
+  localStorage[localStorage.user + 'keys'] = keyArray;
+  var keySlot;
+  for (var j = 0; j < keyArray.length; j++) {
+    var key = j + 1;
+    keySlot = document.getElementById('slot' + key);
+    keySlot.value = keyArray[j];
+    keySlot.innerHTML = '';
+    keySlot.innerHTML = keyArray[j];
+  }
+}
+
 //Function to save username
 function save(e){
   event.preventDefault(); //Prevent reload
@@ -62,7 +94,7 @@ function button(e){
     }else if (level === 'value4'){
       alert('NSA Encryption Detected.');
     }
-
+    keyListSave(password.value);
   } else if (e.target.innerHTML === 'Decrypt'){
     if (!checker()){
       alert('Please enter missing fields.');
@@ -102,7 +134,7 @@ function checker(){
 
 function resetUser(e) {
   e.preventDefault();
-  localStorage.clear();
+  localStorage.removeItem(user);
   document.getElementById('username').value = '';
   getUser();
 }
@@ -114,6 +146,7 @@ document.getElementById('encode').addEventListener('click', button);
 document.getElementById('decode').addEventListener('click', button);
 document.getElementById('clearbtn').addEventListener('click', button);
 document.getElementById('clearLocal').addEventListener('click', resetUser);
+document.getElementById('keylog').addEventListener('change', reuseKey);
 
 //Copy button
 var copybtn = document.getElementById('copylink');
