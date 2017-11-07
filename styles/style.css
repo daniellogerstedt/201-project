@@ -81,8 +81,6 @@ h1 {
   float: left;
 }
 
-
-
 #instructions h2 {
   font-family: Cinzel;
   font-weight: bold;
@@ -95,6 +93,10 @@ h1 {
   font-family: Cinzel;
   font-weight: bold;
   font-size: 15px;
+
+#about p, #about li, #about h3 {
+  font-family: arial;
+  font-size: 20px;
   color: white;
   margin-bottom: 10px;
 }
@@ -136,6 +138,7 @@ textarea {
   padding: 10px;
   width: 500px;
   height: 300px;
+  line-height: 15px
   color: white;
   margin-bottom: 15px;
   margin-right: 20px;
