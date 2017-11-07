@@ -56,7 +56,7 @@ function confidentialDecrypt(message, password) {
   if (encryptedPassword === password) {
     return decode(decryptionLevelOne.slice(0, -password.length));
   }
-  return spacify(encode(message + 'system lockout'));
+  return 'The input message is not encrypted, the cypher key used is invalid, and/or an incorrect encryption level was selected.';
 }
 
 // encrypts using previous level encryption function, reverses string then encodes again.

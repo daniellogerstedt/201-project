@@ -22,13 +22,14 @@
     </header>
 
     <div id="welcome" class="inactive">
-      <p>Please enter your name for access:</p>
+      <h3>Use this website to encrypt a private message using a key. Share your message publicly.  People who know the key can decrypt the message.</h3>
       <form id="checkname">
         <fieldset>
           <label for="user"></label>
-          <input type="text" name="user" placeholder="User Name" required>
+          <input id="username" type="text" name="user" placeholder="User Name" required>
         </fieldset>
       </form>
+      <p>Please enter your name for access</p>
     </div>
 
     <main>
@@ -60,12 +61,12 @@
           <section id="message">
             <fieldset>
               <label for="name"></label>
-              <input id="alias" type="text" name="name" placeholder="Alias" required>
+              <input id="alias" type="text" name="name" placeholder="Alias">
               <button id="clearLocal">Reset User</button>
             </fieldset>
             <fieldset>
               <label for="keycode"></label>
-              <input id="key" type="text" name="key" placeholder="Enter Key" required>
+              <input id="key" type="text" name="key" placeholder="Enter Key">
               <select id="keylog" name="key log"> \
                 <option id="slot1">Slot 1</option>
                 <option id="slot2">Slot 2</option>
@@ -76,7 +77,7 @@
             </fieldset>
             <fieldset>
               <label for="message"></label>
-              <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message" required></textarea>
+              <textarea id="large_box" type="text" name="input" rows="20" placeholder="Input Message"></textarea>
             </fieldset>
 
             <label id="security" for="Security Level">Security Level:</label>
@@ -94,7 +95,7 @@
           </section>
 
           <section id="message-output">
-            <p id="read_only_message">Secret Message Populates Here:</p>
+            <textarea readonly id="read_only_message" type="text" rows="20" placeholder="Secret Message Populates Here:"> </textarea>
             <nav id="social_links">
               <ul>
                 <li>
