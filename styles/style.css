@@ -109,6 +109,15 @@ h1 {
   margin-bottom: 40px;
 }
 /* End of instructions */
+
+#about {
+  margin-top: 20px;
+  font-family: Cinzel;
+  font-size: 25px;
+  float: right;
+  color: #FFF;
+}
+
 /* Welcome section */
 .inactive {
   display: none;
@@ -174,6 +183,14 @@ h1 {
   color: #FFF;
   margin-bottom: 15px;
   margin-right: 20px;
+}
+
+/* Key Log */
+#keylog {
+  padding: 9px;
+  width: 95px;
+  background-color: #000;
+  color: #FFF;
 }
 /* End of First Section */
 
