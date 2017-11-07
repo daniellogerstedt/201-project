@@ -41,11 +41,11 @@ function save(e){
 function button(e){
   e.preventDefault();
 
-  if (e.target.innerHTML==='Destroy Message'){
+  if (e.target.innerHTML === 'Destroy Message'){
     message.value='';
     password.value='';
 
-  } else if (e.target.innerHTML==='Encrypt'){
+  } else if (e.target.innerHTML === 'Encrypt'){
     if (!checker()){
       alert('Please enter missing fields.');
       return;
@@ -64,23 +64,29 @@ function button(e){
       alert('NSA Encryption Detected.');
     }
 
-  } else if (e.target.innerHTML==='Decrypt'){
+  } else if (e.target.innerHTML === 'Decrypt'){
     if (!checker()){
       alert('Please enter missing fields.');
       return;
     }
-    var level = document.getElementById('difficulty').value;
-    if (level==='value1'){
-      var output = confidentialDecrypt(message.value, password.value);
+    try {
+      var level = document.getElementById('difficulty').value;
+      if (level==='value1'){
+        var output = confidentialDecrypt(message.value, password.value);
+        document.getElementById('read_only_message').innerHTML=output;
+      }else if (level==='value2'){
+        var output = secretDecrypt(message.value, password.value);
+        document.getElementById('read_only_message').innerHTML=output;
+      }else if (level==='value3'){
+        var output = topSecretDecrypt(message.value, password.value);
+        document.getElementById('read_only_message').innerHTML=output;
+      }else if (level==='value4'){
+        alert('NSA Encryption Detected.');
+      }
+    }
+    catch (e) {
+      var output = 'The input message is not encrypted, the cypher key used is invalid, and/or an incorrect encryption level was selected.'
       document.getElementById('read_only_message').innerHTML=output;
-    }else if (level==='value2'){
-      var output = secretDecrypt(message.value, password.value);
-      document.getElementById('read_only_message').innerHTML=output;
-    }else if (level==='value3'){
-      var output = topSecretDecrypt(message.value, password.value);
-      document.getElementById('read_only_message').innerHTML=output;
-    }else if (level==='value4'){
-      alert('NSA Encryption Detected.');
     }
   }
 }
@@ -95,10 +101,17 @@ function checker(){
   return true;
 }
 
+function resetUser(e) {
+  e.preventDefault();
+  localStorage.clear();
+  document.getElementById('username').value = '';
+  getUser();
+}
+
 getUser();
 
 //Adding event listeners on buttons
 document.getElementById('encode').addEventListener('click', button);
 document.getElementById('decode').addEventListener('click', button);
 document.getElementById('clearbtn').addEventListener('click', button);
-document.getElementById('clearLocal').addEventListener('click', placeholder);
+document.getElementById('clearLocal').addEventListener('click', resetUser);
