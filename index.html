@@ -4,9 +4,9 @@
   <head>
     <meta></meta>
     <title>Secret Decoder Ring</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bangers|Cinzel|Libre+Barcode+39+Text" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/slider.css">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bangers|Cinzel|Libre+Barcode+39+Text" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
   </head>
 
@@ -29,7 +29,6 @@
     </div>
 
     <main>
-
       <section id="instructions">
         <h2>Instructions:</h2>
         <p>First determine whether you are using the correct Alias.</p>
@@ -46,7 +45,7 @@
           <li>
             <h3>For Decryption:</h3>
           </li>
-          <li>Put required cypher key in, be specific. This is case sensitive.</li>
+          <li>Put required cypher key in, be specific. This is also case sensitive.</li>
           <li>Input your message to be decrypted.</li>
           <li>Select the level of encryption placed on message.</li>
           <li>Click decrypt button.</li>
@@ -71,60 +70,41 @@
 
             <label id="security" for="Security Level">Security Level:</label>
 
-          <select id="difficulty" name="difficulty"> <!--Supplement an id here instead of using 'name'-->
-              <option value="value1">Drink Your Ovaltine</option>
-              <option value="value2">Boris &amp; Natasha</option>
-              <option value="value3">Secret Squirrel</option>
-              <option value="value4">NSA Grade</option>
-          </select>
+            <select id="difficulty" name="difficulty"> \
+                <option value="value1">Drink Your Ovaltine</option>
+                <option value="value2">Boris &amp; Natasha</option>
+                <option value="value3">Secret Squirrel</option>
+                <option value="value4">NSA Grade</option>
+            </select>
 
-          <section id="btns">
             <button id="encode">Encrypt</button>
             <button id="decode">Decrypt</button>
             <button id="clearbtn">Destroy Message</button>
           </section>
 
           <section id="message-output">
-              <p>Secret Message Populates Here:</p>
-              <nav id="social_links">
-                <ul>
-                  <li>
-                    <a href="http://www.facebook.com">
-                      <img src="./img/fbicon.png">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.twitter.com">
-                      <img src="./img/twiticon.png">
-                    </a>
-                  </li>
-                  <li>
-                    <img src="./img/copy.png">
-                  </li>
-                </ul>
-              </nav>
+            <p>Secret Message Populates Here:</p>
+            <nav id="social_links">
+              <ul>
+                <li>
+                  <a href="http://www.facebook.com">
+                    <img src="./img/fbicon.png">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.twitter.com">
+                    <img src="./img/twiticon.png">
+                  </a>
+                </li>
+                <li>
+                  <img src="./img/copy.png">
+                </li>
+              </ul>
+            </nav>
           </section>
-
-
         </form>
       </div>
-
-      <nav id="social_links">
-        <ul>
-          <li>
-            <a href="http://www.facebook.com">
-              <img src="../img/fbicon.png">
-            </a>
-          </li>
-          <li>
-            <a href="http://www.twitter.com">
-              <img src="../img/twiticon.png">
-            </a>
-          </li>
-        </ul>
-      </nav>
     </main>
-
 
     <footer class="small_footer">
       <p><abbr id="abbr_btn" title="DON'T CLICK ME!"><a id='hidden_footer_toggle'>&copy; </a></abbr>2017 - Secret Decoder Ring</p>
@@ -204,7 +184,7 @@
     <script src="crypto.js"></script>
     <script src="slider.js"></script>
     <script src="app.js"></script>
-  </body>
 
+  </body>
 
 </html>
