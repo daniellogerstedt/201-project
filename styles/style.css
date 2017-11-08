@@ -363,3 +363,11 @@ textarea:hover {
   opacity: 1;
   width: 25%;
 }
+
+.profile_sections {
+  margin-bottom: 150px;
+}
+
+.profile_sections img {
+  margin-top: -50px;
+}
