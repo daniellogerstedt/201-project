@@ -125,7 +125,7 @@ h1 {
 }
 
 .active {
-  display:block;
+  display: inline-block;
 }
 
 /* Welcome */
