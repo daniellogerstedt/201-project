@@ -22,14 +22,14 @@
     </header>
 
     <div id="welcome" class="inactive">
-      <h3>Use this website to encrypt a private message using a key. Share your message publicly.  People who know the key can decrypt the message.</h3>
+      <h3>Secret Decoder Ring allows you to encrypt private messages and bind them to a special key to share with allies.</h3>
+      <p>Enter your codename for access:</p>
       <form id="checkname">
         <fieldset>
           <label for="user"></label>
           <input id="username" type="text" name="user" placeholder="User Name" required>
         </fieldset>
       </form>
-      <p>Please enter your name for access</p>
     </div>
 
     <main>
@@ -41,6 +41,7 @@
             <h3>For Encryption:</h3>
           </li>
           <li>Decide on a cypher key, be specific. This is case sensitive.</li>
+          <li>Keys will be saved in your key slot menu.</li>
           <li>Input your message to be encrypted.</li>
           <li>Select the level of encryption you wish to use.</li>
           <li>Click encrypt button.</li>
@@ -68,11 +69,11 @@
               <label for="keycode"></label>
               <input id="key" type="text" name="key" placeholder="Enter Key">
               <select id="keylog" name="key log"> \
-                <option id="slot1">Slot 1</option>
-                <option id="slot2">Slot 2</option>
-                <option id="slot3">Slot 3</option>
-                <option id="slot4">Slot 4</option>
-                <option id="slot5">Slot 5</option>
+                <option id="slot1">Key Slot</option>
+                <option id="slot2">Key Slot</option>
+                <option id="slot3">Key Slot</option>
+                <option id="slot4">Key Slot</option>
+                <option id="slot5">Key Slot</option>
               </select>
             </fieldset>
             <fieldset>
@@ -91,7 +92,7 @@
 
             <button id="encode">Encrypt</button>
             <button id="decode">Decrypt</button>
-            <button id="clearbtn">Destroy Message</button>
+            <button id="clearbtn">Destroy Message and Keys</button>
           </section>
 
           <section id="message-output">
