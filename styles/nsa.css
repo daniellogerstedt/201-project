@@ -1,0 +1,20 @@
+#overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 1000px;
+  background-image: url("https://media.giphy.com/media/xT0xezmNWWNmxZi1R6/giphy.gif");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#overlay.active {
+  display: block;
+}
+
+span {
+  display: block;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
