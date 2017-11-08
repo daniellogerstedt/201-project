@@ -47,16 +47,28 @@ function keyListSave(password) {
   }
   keyArray.push(password);
   localStorage[localStorage.user + 'keys'] = keyArray;
-  var keySlot;
-  for (var j = 0; j < keyArray.length; j++) {
-    var key = j + 1;
-    keySlot = document.getElementById('slot' + key);
-    keySlot.value = keyArray[j];
-    keySlot.innerHTML = '';
-    keySlot.innerHTML = keyArray[j];
-  }
+  updateKeylist();
 }
 
+//Refreshes Keylist with values
+function updateKeylist() {
+  var keySlot;
+  for (var d = 1; d < 6; d++) {
+    keySlot = document.getElementById('slot' + d);
+    keySlot.removeAttribute('value');
+    keySlot.innerHTML = '';
+    keySlot.innerHTML = 'Key Slot';
+  }
+  if (!localStorage[localStorage.user + 'keys']) return;
+  var keysArray = localStorage[localStorage.user + 'keys'].split(',');
+  for (var j = 0; j < keysArray.length; j++) {
+    var key = j + 1;
+    keySlot = document.getElementById('slot' + key);
+    keySlot.value = keysArray[j];
+    keySlot.innerHTML = '';
+    keySlot.innerHTML = keysArray[j];
+  }
+}
 //Function to save username
 function save(e){
   event.preventDefault(); //Prevent reload
@@ -67,6 +79,7 @@ function save(e){
   main.style.display = 'block';
   newUser.style.display = 'none';
   document.getElementById('alias').value = localStorage.user;
+  updateKeylist();
 }
 
 //Function to check which button was selected
@@ -91,8 +104,6 @@ function button(e){
     }else if (level === 'value3'){
       var output = topSecretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
-    }else if (level === 'value4'){
-      alert('NSA Encryption Detected.');
     }
     keyListSave(password.value);
   } else if (e.target.innerHTML === 'Decrypt'){
@@ -111,8 +122,6 @@ function button(e){
       }else if (level === 'value3'){
         var output = topSecretDecrypt(message.value, password.value);
         document.getElementById('read_only_message').innerHTML = output;
-      }else if (level === 'value4'){
-        alert('NSA Encryption Detected.');
       }
     }
     catch (e) {
@@ -137,9 +146,11 @@ function resetUser(e) {
   localStorage.removeItem('user');
   document.getElementById('username').value = '';
   getUser();
+  updateKeylist();
 }
 
 getUser();
+updateKeylist();
 
 //Adding event listeners on buttons
 document.getElementById('encode').addEventListener('click', button);
