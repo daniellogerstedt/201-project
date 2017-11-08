@@ -52,8 +52,14 @@ function keyListSave(password) {
 
 //Refreshes Keylist with values
 function updateKeylist() {
-  if (!localStorage[localStorage.user + 'keys']) return;
   var keySlot;
+  for (var d = 1; d < 6; d++) {
+    keySlot = document.getElementById('slot' + d);
+    keySlot.removeAttribute('value');
+    keySlot.innerHTML = '';
+    keySlot.innerHTML = 'Key Slot';
+  }
+  if (!localStorage[localStorage.user + 'keys']) return;
   var keysArray = localStorage[localStorage.user + 'keys'].split(',');
   for (var j = 0; j < keysArray.length; j++) {
     var key = j + 1;
@@ -73,6 +79,7 @@ function save(e){
   main.style.display = 'block';
   newUser.style.display = 'none';
   document.getElementById('alias').value = localStorage.user;
+  updateKeylist();
 }
 
 //Function to check which button was selected
