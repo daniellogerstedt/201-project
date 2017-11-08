@@ -4,9 +4,11 @@ var toggle = document.getElementById('difficulty');
 var overlay = document.getElementById('overlay');
 var timeoutVar;
 var encrypt = document.getElementById('encode');
+var decrypt = document.getElementById('decode');
 
 //toggle.addEventListener('change', displayNSA);
 encrypt.addEventListener('click', displayNSA);
+decrypt.addEventListener('click', displayNSA);
 
 function displayNSA() {
   console.log('change:', this.value);
