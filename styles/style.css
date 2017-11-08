@@ -373,6 +373,7 @@ textarea:hover {
 #aboutMain img:hover{
   opacity: 1;
   width: 25%;
+  border-radius: 50%;
 }
 
 .profile_sections {
