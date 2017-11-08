@@ -134,7 +134,7 @@ function checker(){
 
 function resetUser(e) {
   e.preventDefault();
-  localStorage.removeItem(user);
+  localStorage.removeItem('user');
   document.getElementById('username').value = '';
   getUser();
 }
