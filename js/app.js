@@ -91,8 +91,6 @@ function button(e){
     }else if (level === 'value3'){
       var output = topSecretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
-    }else if (level === 'value4'){
-      alert('NSA Encryption Detected.');
     }
     keyListSave(password.value);
   } else if (e.target.innerHTML === 'Decrypt'){

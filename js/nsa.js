@@ -3,12 +3,14 @@
 var toggle = document.getElementById('difficulty');
 var overlay = document.getElementById('overlay');
 var timeoutVar;
+var encrypt = document.getElementById('encode');
 
-toggle.addEventListener('change', displayNSA);
+//toggle.addEventListener('change', displayNSA);
+encrypt.addEventListener('click', displayNSA);
 
 function displayNSA() {
   console.log('change:', this.value);
-  if (this.value === 'value4') {
+  if (toggle.options[toggle.selectedIndex].value === 'value4' && document.getElementById('key').value && document.getElementById('large_box')) {
     overlay.setAttribute('class', 'active');
     document.getElementsByTagName('main')[0].style.display = 'none';
     document.getElementsByTagName('header')[0].style.display = 'none';
