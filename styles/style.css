@@ -125,7 +125,7 @@ h1 {
 }
 
 .active {
-  display:block;
+  display: inline-block;
 }
 
 /* Welcome */
@@ -295,6 +295,7 @@ textarea:hover {
   margin-top: 5px;
 }
 
+/*copy button animation*/
 .unclicked_btn {
   width: 30px;
   margin-left: 10px;
@@ -307,7 +308,7 @@ textarea:hover {
   width: 40px;
   opacity: .8;
 }
-
+/*copybutton animation*/
 /* End of Navigation */
 
 /* About Us page */

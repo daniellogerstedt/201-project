@@ -175,6 +175,7 @@ function copy() {
   window.setTimeout(copyInfoToggle, 350);
 }
 
+//Copy Button Animation
 function copyInfoToggle(){
   var copiedtxt = document.getElementById('togglecopy');
   if(copybtn.getAttribute('class') === 'clicked_btn') {
