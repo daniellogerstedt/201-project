@@ -154,22 +154,21 @@ copybtn.addEventListener('click', copy);
 var secret = document.getElementById('read_only_message');
 
 function copy() {
-  //secret.select();
-  //document.execCommand('copy');
-  var dummy = document.createElement("textarea");
+  //Create dummy element that isn't displayed
+  var dummy = document.createElement('textarea');
   // Add it to the document
   document.body.appendChild(dummy);
   // Set its ID
-  dummy.setAttribute("id", "dummy_id");
-  // Output the array into it
-  document.getElementById("dummy_id").value = 'Go to this website to decode this message: https://montgomeryrd.github.io/201-project/index.html \n\n' +
-  'Use decryption key: ' +  document.getElementById('key').value + '\n\n' +
-  'Use Security level: ' +  document.getElementById('difficulty').options[document.getElementById('difficulty').selectedIndex].text + '\n\n' +
+  dummy.setAttribute('id', 'dummy_id');
+  // output to dummy element textrea
+  document.getElementById('dummy_id').value = 'Go to this website to decode this message: https://montgomeryrd.github.io/201-project/index.html \n\n' +
+  'Use decryption key: ' + document.getElementById('key').value + '\n\n' +
+  'Use Security level: ' + document.getElementById('difficulty').options[document.getElementById('difficulty').selectedIndex].text + '\n\n' +
   'Here is the message: ' + document.getElementById('read_only_message').value;
   // Select it
   dummy.select();
   // Copy its contents
-  document.execCommand("copy");
+  document.execCommand('copy');
   // Remove it as its not needed anymore
   document.body.removeChild(dummy);
 }
