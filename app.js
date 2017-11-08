@@ -151,7 +151,6 @@ document.getElementById('keylog').addEventListener('change', reuseKey);
 //Copy button
 var copybtn = document.getElementById('copylink');
 copybtn.addEventListener('click', copy);
-var secret = document.getElementById('read_only_message');
 
 function copy() {
   //Create dummy element that isn't displayed
@@ -171,4 +170,22 @@ function copy() {
   document.execCommand('copy');
   // Remove it as its not needed anymore
   document.body.removeChild(dummy);
+
+  copyInfoToggle();
+  window.setTimeout(copyInfoToggle, 350);
+}
+
+function copyInfoToggle(){
+  var copiedtxt = document.getElementById('togglecopy');
+  if(copybtn.getAttribute('class') === 'clicked_btn') {
+    copybtn.setAttribute('class', 'unclicked_btn');
+    copiedtxt.setAttribute('class', 'unclicked_btn');
+    copybtn.setAttribute('src', './img/copy.png');
+    copiedtxt.innerHTML = 'Copy';
+  } else {
+    copybtn.setAttribute('class', 'clicked_btn');
+    copiedtxt.setAttribute('class', 'clicked_btn');
+    copybtn.setAttribute('src', './img/copied.png');
+    copiedtxt.innerHTML = 'Copied!';
+  }
 }

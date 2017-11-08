@@ -270,23 +270,44 @@ textarea:hover {
 
 /* Navigation */
 #social_links {
-clear: both;
-float: right;
+  clear: both;
+  float: right;
 }
 
 #social_links ul li {
   display: inline-block;
 }
 
-#social_links ul li img {
+#fb, #twit {
   width: 30px;
   margin-left: 5px;
   transition: 350ms;
 }
 
-#social_links ul li img:hover {
+#fb:hover, #twit:hover {
   width: 40px;
 }
+
+#togglecopy {
+  position: absolute;
+  display: block;
+  float:right;
+  margin-top: 5px;
+}
+
+.unclicked_btn {
+  width: 30px;
+  margin-left: 10px;
+  transition: 350ms;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.clicked_btn {
+  width: 40px;
+  opacity: .8;
+}
+
 /* End of Navigation */
 
 /* About Us page */
