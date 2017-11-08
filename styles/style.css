@@ -372,42 +372,131 @@ textarea:hover {
 
 #aboutMain img:hover{
   opacity: 1;
-  width: 25%;
+  width: 28%;
   border-radius: 50%;
 }
 
 .profile_sections {
   margin-bottom: 150px;
+  width: 1000px;
 }
 
 .profile_sections img {
   margin-top: -50px;
+  position: absolute;
+  margin-left: 700px;
 }
 
 /* Profile Animations */
-/*#Jeremy {
+#Jeremy {
   margin-top: 20px;
-  margin: 0px auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   font-family: 'Libre Barcode 39 Text';
   font-size: 70px;
   color: #FFF;
-  width: 800px;
+  width: 1000px;
   height: 370px;
 }
 
 #Jeremy {
   position: absolute;
   margin-left: 20px;
-  left: -1000px;
+  left: -1200px;
   height: 200px;
   -webkit-animation: slide 350ms forwards;
   -webkit-animation-delay: 1s;
   animation: slide 350ms forwards;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 
+#Karen {
+  margin-top: 300px;
+  position: relative;
+  overflow: visible;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 70px;
+  color: #FFF;
+  width: 1000px;
+  height: 370px;
+}
+
+#Karen {
+  position: absolute;
+  margin-left: 20px;
+  left: -1200px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 1.5s;
+}
+
+#Dan {
+  margin-top: 580px;
+  position: relative;
+  overflow: visible;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 70px;
+  color: #FFF;
+  width: 1000px;
+  height: 370px;
+}
+
+#Dan {
+  position: absolute;
+  margin-left: 20px;
+  left: -1200px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 2.5s;
+}
+
+#Jamie {
+  margin-top: 860px;
+  position: relative;
+  overflow: visible;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 70px;
+  color: #FFF;
+  width: 1000px;
+  height: 370px;
+}
+
+#Jamie {
+  position: absolute;
+  margin-left: 20px;
+  left: -1200px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 3s;
+}
+
+#Richard {
+  margin-top: 1140px;
+  position: relative;
+  overflow: visible;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 70px;
+  color: #FFF;
+  width: 1000px;
+  height: 370px;
+}
+
+#Richard {
+  position: absolute;
+  margin-left: 20px;
+  left: -1200px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 4s;
+}
 @-webkit-keyframes slide {
   100% { left: 0; }
 }
