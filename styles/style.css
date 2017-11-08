@@ -8,6 +8,16 @@ body {
   background-position: center;
 }
 
+#background_blue_spy {
+  width: 1300px;
+  margin: 0px auto;
+  background-image: url("../img/spyblue.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 main {
   margin-bottom: 600px;
   margin-left: 100px;
@@ -311,6 +321,7 @@ textarea:hover {
 /*copybutton animation*/
 /* End of Navigation */
 
+/* About Us Page */
 /* About Us page */
 #aboutMain {
   position: absolute;
@@ -371,4 +382,36 @@ textarea:hover {
 
 .profile_sections img {
   margin-top: -50px;
+}
+
+/* Profile Animations */
+/*#Jeremy {
+  margin-top: 20px;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 70px;
+  color: #FFF;
+  width: 800px;
+  height: 370px;
+}
+
+#Jeremy {
+  position: absolute;
+  margin-left: 20px;
+  left: -1000px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
 }
