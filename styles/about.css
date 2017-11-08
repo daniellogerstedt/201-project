@@ -1,0 +1,289 @@
+body {
+  width: 1300px;
+  margin: 0px auto;
+  background-image: url("../img/spy.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+main {
+  margin-bottom: 600px;
+  margin-left: 100px;
+}
+
+/* Header */
+h1 {
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Libre Barcode 39 Text';
+  font-size: 70px;
+  color: #FFF;
+  width: 800px;
+  height: 370px;
+}
+
+h1 {
+  position: absolute;
+  margin-left: 20px;
+  left: -1000px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
+
+/* Main Logo */
+#logo img {
+  margin-top: 80px;
+  margin-left: -20px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+/* End of Main Logo */
+/* End Header */
+
+/* instructions */
+#instructions {
+  position: absolute;
+  left: -2000px;
+  margin-left: 20px;
+  height: 200px;
+  -webkit-animation: slide 350ms forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 350ms forwards;
+  animation-delay: 1s;
+}
+
+#instructions {
+  margin-top: -300px;
+  margin-left: 840px;
+  width: 700px;
+  height: 300px;
+}
+
+#instructions ol {
+  display: inline-block;
+  float: left;
+}
+
+#instructions h2 {
+  font-family: Cinzel;
+  font-weight: bold;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#instructions h3 {
+  font-family: Cinzel;
+  font-weight: bold;
+  font-size: 15px;
+  color: #FFF;
+}
+
+#instructions ol li {
+  font-family: Arial;
+  font-size: 15px;
+  color: #a6a6a6;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#instructions p {
+  font-family: arial;
+  font-size: 15px;
+  color: #a6a6a6;
+  width: 300px;
+  margin-bottom: 40px;
+}
+/* End of instructions */
+
+#about {
+  margin-top: 20px;
+  font-family: Cinzel;
+  font-size: 25px;
+  float: right;
+  color: #FFF;
+}
+
+/* Welcome section */
+.inactive {
+  display: none;
+}
+
+.active {
+  display:block;
+}
+
+/* Welcome */
+#welcome {
+  margin-left: 100px;
+  margin-top: 100px;
+  font-family: Cinzel;
+  background-color: black;
+}
+
+#welcome h3 {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #FFF;
+  width: 300px;
+}
+
+#welcome p{
+  color: white;
+}
+
+#checkname fieldset{
+  background-color: black;
+}
+
+#checkname input{
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 300px;
+  color: white;
+}
+/* Form */
+/* First Section */
+#form section {
+  float: left;
+  display: inline-block;
+  height: 315px;
+}
+
+#message fieldset input{
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 300px;
+  color: white;
+}
+
+#large_box {
+  background-color: #444;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  line-height: 15px;
+  color: #FFF;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+textarea {
+  opacity: .5;
+  transition: 350ms;
+}
+
+textarea:hover {
+  opacity: 1;
+}
+
+/* Key Log */
+#keylog {
+  padding: 9px;
+  width: 95px;
+  background-color: #000;
+  color: #FFF;
+}
+/* End of First Section */
+
+/* Difficulty */
+#security {
+  float: left;
+  color:white;
+  font-family: Cinzel;
+  font-size: 20px;
+}
+
+#difficulty {
+  margin-top: -6px;
+  margin-left: 10px;
+  padding: 10px;
+}
+/* End of Difficulty
+/* Buttons */
+#clearLocal {
+  position: absolute;
+  padding: 10px;
+  background-color: black;
+  border: 3px solid #444;
+  color: white;
+  font-family: arial;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+#encode, #decode {
+  width: 90px;
+  padding: 10px;
+  background-color: white;
+  font-family: arial;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+#clearbtn {
+  position: absolute;
+  padding: 10px;
+  background-color: black;
+  border: 3px solid #444;
+  color: white;
+  margin-top: 50px;
+  margin-left: -190px;
+}
+/* End of Buttons */
+
+/* Output Message */
+#message-output {
+  margin-top: 88px;
+  width: 515px;
+  height: 200px;
+}
+
+#read_only_message {
+  background-color: #444;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  line-height: 15px;
+  color: #FFF;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+/* Output Message */
+
+/* Navigation */
+#social_links {
+clear: both;
+float: right;
+}
+
+#social_links ul li {
+  display: inline-block;
+}
+
+#social_links ul li img {
+  width: 30px;
+  margin-left: 5px;
+  transition: 350ms;
+}
+
+#social_links ul li img:hover {
+  width: 40px;
+}
+/* End of Navigation */
