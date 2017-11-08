@@ -47,16 +47,22 @@ function keyListSave(password) {
   }
   keyArray.push(password);
   localStorage[localStorage.user + 'keys'] = keyArray;
-  var keySlot;
-  for (var j = 0; j < keyArray.length; j++) {
-    var key = j + 1;
-    keySlot = document.getElementById('slot' + key);
-    keySlot.value = keyArray[j];
-    keySlot.innerHTML = '';
-    keySlot.innerHTML = keyArray[j];
-  }
+  updateKeylist();
 }
 
+//Refreshes Keylist with values
+function updateKeylist() {
+  if (!localStorage[localStorage.user + 'keys']) return;
+  var keySlot;
+  var keysArray = localStorage[localStorage.user + 'keys'].split(',');
+  for (var j = 0; j < keysArray.length; j++) {
+    var key = j + 1;
+    keySlot = document.getElementById('slot' + key);
+    keySlot.value = keysArray[j];
+    keySlot.innerHTML = '';
+    keySlot.innerHTML = keysArray[j];
+  }
+}
 //Function to save username
 function save(e){
   event.preventDefault(); //Prevent reload
@@ -133,9 +139,11 @@ function resetUser(e) {
   localStorage.removeItem('user');
   document.getElementById('username').value = '';
   getUser();
+  updateKeylist();
 }
 
 getUser();
+updateKeylist();
 
 //Adding event listeners on buttons
 document.getElementById('encode').addEventListener('click', button);
