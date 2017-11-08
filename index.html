@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!--Comment-->
 <html>
   <head>
     <meta></meta>
@@ -93,7 +93,6 @@
             <button id="encode">Encrypt</button>
             <button id="decode">Decrypt</button>
             <button id="clearbtn">Destroy Message and Keys</button>
-            <p id="togglecopy">Copy Information</p>
           </section>
 
           <section id="message-output">
@@ -102,16 +101,17 @@
               <ul>
                 <li>
                   <a href="http://www.facebook.com" target="_blank">
-                    <img src="./img/fbicon.png">
+                    <img id="fb" src="./img/fbicon.png">
                   </a>
                 </li>
                 <li>
                   <a href="http://www.twitter.com" target="_blank">
-                    <img src="./img/twiticon.png">
+                    <img id="twit" src="./img/twiticon.png">
                   </a>
                 </li>
                 <li>
-                  <img id="copylink" src="./img/copy.png">
+                  <img class="unclicked_btn" id="copylink" src="./img/copy.png">
+                  <span class="unclicked_btn" id="togglecopy">Copy</span>
                 </li>
               </ul>
             </nav>
