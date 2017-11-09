@@ -33,20 +33,31 @@ function keyListSave(password) {
   if (!password) {
     return;
   }
-  var keyArray = [];
+  var keyObj = {
+  };
   if (localStorage[localStorage.user + 'keys']) {
-    keyArray = localStorage[localStorage.user + 'keys'].split(',');
+    keyObj = JSON.parse(localStorage[localStorage.user + 'keys']);
   }
-  for (var i = 0; i < keyArray.length; i++) {
-    if (keyArray[i] === password) {
+  for (var i = 0; i < 5; i++) {
+    if (keyObj['key' + i] === password) {
       return;
     }
   }
-  if (keyArray.length === 5) {
-    keyArray = keyArray.slice(-4);
+  if (keyObj.key4) {
+    keyObj.key0 = keyObj.key1;
+    keyObj.key1 = keyObj.key2;
+    keyObj.key2 = keyObj.key3;
+    keyObj.key3 = keyObj.key4;
+    keyObj.key4 = password;
+  } else {
+    for (var k = 0; k < 5; k++) {
+      if (!keyObj['key' + k]) {
+        keyObj['key' + k] = password;
+        break;
+      }
+    }
   }
-  keyArray.push(password);
-  localStorage[localStorage.user + 'keys'] = keyArray;
+  localStorage[localStorage.user + 'keys'] = JSON.stringify(keyObj);
   updateKeylist();
 }
 
@@ -60,13 +71,15 @@ function updateKeylist() {
     keySlot.innerHTML = 'Key Slot';
   }
   if (!localStorage[localStorage.user + 'keys']) return;
-  var keysArray = localStorage[localStorage.user + 'keys'].split(',');
-  for (var j = 0; j < keysArray.length; j++) {
+  var keysObj = JSON.parse(localStorage[localStorage.user + 'keys']);
+  for (var j = 0; j < 5; j++) {
     var key = j + 1;
     keySlot = document.getElementById('slot' + key);
-    keySlot.value = keysArray[j];
-    keySlot.innerHTML = '';
-    keySlot.innerHTML = keysArray[j];
+    if (keysObj['key' + j]) {
+      keySlot.value = keysObj['key' + j];
+      keySlot.innerHTML = '';
+      keySlot.innerHTML = keysObj['key' + j];
+    }
   }
 }
 //Function to save username
@@ -85,7 +98,8 @@ function save(e){
 //Function to check which button was selected
 function button(e){
   e.preventDefault();
-
+  var output;
+  var level;
   if (e.target.innerHTML === 'Destroy Message'){
     window.location.reload(true);
 
@@ -94,15 +108,15 @@ function button(e){
       alert('Please enter missing fields.');
       return;
     }
-    var level = document.getElementById('difficulty').value;
+    level = document.getElementById('difficulty').value;
     if (level === 'value1'){
-      var output = confidentialEncrypt(localStorage.user + ' says: ' + message.value, password.value);
+      output = confidentialEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
     }else if (level === 'value2'){
-      var output = secretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
+      output = secretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
     }else if (level === 'value3'){
-      var output = topSecretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
+      output = topSecretEncrypt(localStorage.user + ' says: ' + message.value, password.value);
       document.getElementById('read_only_message').innerHTML = output;
     }
     keyListSave(password.value);
@@ -112,20 +126,20 @@ function button(e){
       return;
     }
     try {
-      var level = document.getElementById('difficulty').value;
+      level = document.getElementById('difficulty').value;
       if (level === 'value1'){
-        var output = confidentialDecrypt(message.value, password.value);
+        output = confidentialDecrypt(message.value, password.value);
         document.getElementById('read_only_message').innerHTML = output;
       }else if (level === 'value2'){
-        var output = secretDecrypt(message.value, password.value);
+        output = secretDecrypt(message.value, password.value);
         document.getElementById('read_only_message').innerHTML = output;
       }else if (level === 'value3'){
-        var output = topSecretDecrypt(message.value, password.value);
+        output = topSecretDecrypt(message.value, password.value);
         document.getElementById('read_only_message').innerHTML = output;
       }
     }
     catch (e) {
-      var output = 'The input message is not encrypted, the cypher key used is invalid, and/or an incorrect encryption level was selected.'
+      output = 'The input message is not encrypted, the cypher key used is invalid, and/or an incorrect encryption level was selected.';
       document.getElementById('read_only_message').innerHTML = output;
     }
   }
