@@ -243,6 +243,7 @@ h1 {
 
 textarea {
   opacity: .5;
+  -webkit-transition: -webkit-transform 350ms;
   transition: 350ms;
 }
 
