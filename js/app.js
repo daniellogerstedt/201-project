@@ -86,7 +86,7 @@ function save(e){
 function button(e){
   e.preventDefault();
 
-  if (e.target.innerHTML === 'Destroy Message and Keys'){
+  if (e.target.innerHTML === 'Destroy Message'){
     window.location.reload(true);
 
   } else if (e.target.innerHTML === 'Encrypt'){
