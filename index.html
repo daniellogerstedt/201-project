@@ -25,11 +25,11 @@
 
     <div id="welcome" class="inactive">
       <h3>Secret Decoder Ring allows you to encrypt private messages and bind them to a special key to share with allies.</h3>
-      <p>Enter your codename for access:</p>
+      <p>Enter your Alias for access:</p>
       <form id="checkname">
         <fieldset>
           <label for="user"></label>
-          <input id="username" type="text" name="user" placeholder="User Name" autocomplete="off" required>
+          <input id="username" type="text" name="user" placeholder="Alias" autocomplete="off" required>
         </fieldset>
       </form>
     </div>
@@ -39,7 +39,7 @@
     <main>
       <section id="instructions">
         <h2>Instructions:</h2>
-        <p>First determine whether you are using the correct Alias.</p>
+        <p>Determine whether you are using the correct Alias to access your previously used keys. Information is stored locally to your browser.</p>
         <ol id="encrypt_instructions">
           <li>
             <h3>For Encryption:</h3>
@@ -66,7 +66,7 @@
             <fieldset>
               <label for="name"></label>
               <input id="alias" type="text" name="name" placeholder="Alias">
-              <button id="clearLocal">Reset User</button>
+              <button id="clearLocal">Reset Alias</button>
             </fieldset>
             <fieldset>
               <label for="keycode"></label>
@@ -100,7 +100,7 @@
           </section>
 
           <section id="message-output">
-            <textarea readonly id="read_only_message" type="text" rows="20" placeholder="Secret Message Populates Here:"> </textarea>
+            <textarea readonly id="read_only_message" type="text" rows="20" placeholder="Secret Message Populates Here"></textarea>
             <nav id="social_links">
               <ul>
                 <li>
