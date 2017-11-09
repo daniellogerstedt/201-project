@@ -56,7 +56,7 @@ h1 {
 }
 
 /* Main Logo */
-#logo img {
+#logo {
   margin-top: 80px;
   margin-left: -20px;
   width: 400px;
@@ -79,7 +79,7 @@ h1 {
 
 #instructions {
   margin-top: -300px;
-  margin-left: 840px;
+  margin-left: 45%;
   width: 700px;
   height: 300px;
 }
