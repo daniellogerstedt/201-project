@@ -56,10 +56,10 @@ h1 {
 }
 
 /* Main Logo */
-#logo img {
-  margin-top: 80px;
-  margin-left: -20px;
-  width: 400px;
+#logo {
+  margin-top: 100px;
+  margin-left: 150px;
+  width: 250px;
   margin-bottom: 20px;
 }
 /* End of Main Logo */
@@ -68,25 +68,71 @@ h1 {
 /* instructions */
 #instructions {
   position: absolute;
-  left: -2000px;
-  margin-left: 20px;
-  height: 200px;
-  -webkit-animation: slide 350ms forwards;
-  -webkit-animation-delay: 1s;
-  animation: slide 350ms forwards;
-  animation-delay: 1s;
+  margin-left: 460px;
+  margin-top: -260px;
+	width: 700px;
+  height: 300px;
+	padding: 2em 0;
+	visibility: hidden;
 }
 
-#instructions {
-  margin-top: -300px;
-  margin-left: 840px;
-  width: 700px;
-  height: 300px;
+.slideDown{
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;
+
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(8%);
+	}
+	65%{
+		transform: translateY(-4%);
+	}
+	80%{
+		transform: translateY(4%);
+	}
+	95%{
+		transform: translateY(-2%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes slideDown {
+	0% {
+		-webkit-transform: translateY(-100%);
+	}
+	50%{
+		-webkit-transform: translateY(8%);
+	}
+	65%{
+		-webkit-transform: translateY(-4%);
+	}
+	80%{
+		-webkit-transform: translateY(4%);
+	}
+	95%{
+		-webkit-transform: translateY(-2%);
+	}
+	100% {
+		-webkit-transform: translateY(0%);
+	}
 }
 
 #instructions ol {
   display: inline-block;
-  float: left;
 }
 
 #instructions h2 {
@@ -197,6 +243,7 @@ h1 {
 
 textarea {
   opacity: .5;
+  -webkit-transition: -webkit-transform 350ms;
   transition: 350ms;
 }
 

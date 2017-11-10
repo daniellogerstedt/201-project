@@ -215,3 +215,9 @@ function copyInfoToggle(){
     copiedtxt.innerHTML = 'Copied!';
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    document.getElementById('instructions').className = 'slideDown';
+  }, 2000);
+}, false);
